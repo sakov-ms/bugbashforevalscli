@@ -1,0 +1,96 @@
+{
+  "default_evaluators": {
+    "Relevance": {},
+    "Coherence": {}
+  },
+  "items": [
+    {
+      "prompt": "Look up the details for claim CN202504990",
+      "expected_response": "The agent should invoke the show-claim-detail tool with claimId set to 'CN202504990' and display detailed information about the claim, including related inspections, purchase orders, and contractor assignments.",
+      "evaluators": {
+        "Citations": {
+          "citation_format": "mixed"
+        },
+        "Groundedness": {
+          "threshold": 5
+        },
+        "ToolCallAccuracy": {
+          "threshold": 4
+        }
+      },
+      "evaluators_mode": "extend"
+    },
+    {
+      "prompt": "Show me claims for Amanda Rodriguez",
+      "expected_response": "The agent should invoke the show-claims-dashboard tool with policyHolderName set to 'Amanda Rodriguez' to filter and display claims associated with that policy holder.",
+      "evaluators": {
+        "Groundedness": {
+          "threshold": 5
+        },
+        "ToolCallAccuracy": {}
+      }
+    },
+    {
+      "prompt": "List all roofing contractors",
+      "expected_response": "The agent should invoke the show-contractors tool with specialty set to 'Roofing' and display the filtered list of roofing contractors available for repair work.",
+      "evaluators": {
+        "Groundedness": {
+          "threshold": 5
+        },
+        "ToolCallAccuracy": {}
+      }
+    },
+    {
+      "prompt": "Who are the available inspectors?",
+      "expected_response": "The agent should invoke the list-inspectors tool and display all available inspectors with their specializations.",
+      "evaluators": {
+        "ToolCallAccuracy": {}
+      }
+    },
+    {
+      "prompt": "Give me a quick summary of claim CN202504991",
+      "expected_response": "The agent should invoke the get-claim-summary tool with claimId set to 'CN202504991' and return a concise text summary of the claim's key details.",
+      "evaluators": {
+        "ToolCallAccuracy": {}
+      }
+    },
+    {
+      "prompt": "Create a high-priority initial inspection for claim CN202504993 scheduled for next Monday",
+      "expected_response": "The agent should invoke the create-inspection tool with claimNumber 'CN202504993', taskType 'initial', priority 'high', and a scheduledDate corresponding to next Monday. It should confirm the inspection was created.",
+      "evaluators": {
+        "ToolCallAccuracy": {}
+      }
+    },
+    {
+      "prompt": "Show me only our preferred contractors",
+      "expected_response": "The agent should invoke the show-contractors tool with preferredOnly set to true and display only the preferred contractors.",
+      "evaluators": {
+        "ToolCallAccuracy": {}
+      }
+    },
+    {
+      "prompt": "What is the company's vacation policy for employees?",
+      "expected_response": "The agent should decline this request, explaining that it is a claims management assistant and cannot answer HR or general company policy questions. It should redirect the user to appropriate resources.",
+      "evaluators": {
+        "PartialMatch": {}
+      },
+      "evaluators_mode": "replace"
+    },
+    {
+      "prompt": "Can you send an email to the adjuster assigned to claim CN202504999?",
+      "expected_response": "The agent should explain that it cannot send emails. It may offer to look up the claim details so the user can identify the assigned adjuster, but it should not claim to have email-sending capability.",
+      "evaluators": {
+        "PartialMatch": {}
+      },
+      "evaluators_mode": "replace"
+    },
+    {
+      "prompt": "Show me all denied claims and then give me the details on the first one",
+      "expected_response": "The agent should first invoke show-claims-dashboard with status 'Denied' to display denied claims, and then invoke show-claim-detail for the first denied claim to provide its full details. The response should address both parts of the request.",
+      "evaluators": {
+        "ToolCallAccuracy": {}
+      }
+    }
+  ],
+  "schemaVersion": "1.0.0"
+}

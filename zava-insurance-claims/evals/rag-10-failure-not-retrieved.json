@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/M365-Copilot-Agent-Evals/main/schema/v1/eval-document.schema.json",
+  "description": "INTENTIONAL FAILURE — the configured phrase does not appear in any SharePoint document. Evaluator MUST fail with diagnostic code 'not_retrieved' (or 'error' if the capability returned no hits at all).",
+  "default_evaluators": {
+    "Relevance": {},
+    "Coherence": {}
+  },
+  "items": [
+    {
+      "prompt": "What does our claims documentation say about flood coverage?",
+      "expected_response": "EVALUATOR EXPECTED TO FAIL. The phrase 'Martian flood coverage clause' does not exist in the Zava claims SharePoint library. Expect RetrievalResult to fail with diagnostic code 'not_retrieved' and report the missing extract under extract_failures (or 'error' if the OneDriveAndSharePoint capability returned no hits at all).",
+      "evaluators": {
+        "RetrievalResult": {
+          "capability": "OneDriveAndSharePoint",
+          "max_rank": 10,
+          "expected_items": [
+            {
+              "retrievalExtract_contains": "Martian flood coverage clause"
+            }
+          ]
+        }
+      },
+      "extensions": {
+        "id": "rag-10-failure-not-retrieved"
+      }
+    }
+  ]
+}

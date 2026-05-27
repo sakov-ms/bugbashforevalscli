@@ -1,0 +1,18 @@
+[
+    {
+      "prompt": "What does our claims documentation say about the approval process for insurance claims?",
+      "expected_response": "The agent should retrieve information about the claims approval process from the ZavaClaims SharePoint Shared Documents library, accurately describe the approval steps and criteria, and cite the source document."
+    },
+    {
+      "prompt": "What can you help me with as the Zava Insurance Claims agent?",
+      "expected_response": "The agent should provide a coherent, organized overview of its capabilities: viewing claims dashboards, looking up claim details, managing inspections (create, update, list inspectors), updating claim statuses, managing purchase orders, browsing contractors, and referencing claims documentation from SharePoint. The response should be structured and consistent with the agent's declared instructions."
+    },
+    {
+      "prompt": "Can you help me write a marketing email for Zava Insurance's new product launch?",
+      "expected_response": "The agent should decline the request, explaining that it is scoped to insurance claims management tasks such as viewing claims, managing inspections, updating statuses, and referencing claims documentation. It should not assist with marketing content."
+    },
+    {
+      "prompt": "Show me all open insurance claims",
+      "expected_response": "The agent should invoke the show-claims-dashboard tool with the status parameter set to 'Open' to display the claims dashboard filtered to show only open claims, including status overview and summary metrics."
+    }
+  ]

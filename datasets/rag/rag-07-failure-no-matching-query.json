@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/M365-Copilot-Agent-Evals/main/schema/v1/eval-document.schema.json",
+  "description": "INTENTIONAL FAILURE — selector 'zzzz_no_match' will not appear in any query. Evaluator MUST fail with diagnostic code 'no_matching_query'.",
+  "default_evaluators": {
+    "Relevance": {},
+    "Coherence": {}
+  },
+  "items": [
+    {
+      "prompt": "What does our claims documentation say about routine maintenance schedules?",
+      "expected_response": "EVALUATOR EXPECTED TO FAIL. The agent's response content is not scored — what matters is that RetrievalQuery fails with diagnostic code 'no_matching_query' because the selector 'zzzz_no_match' will not appear as a case-insensitive substring in any queryString issued by the agent.",
+      "evaluators": {
+        "RetrievalQuery": {
+          "capability": "OneDriveAndSharePoint",
+          "selector": "zzzz_no_match",
+          "includes": [
+            "whatever"
+          ]
+        }
+      },
+      "extensions": {
+        "id": "rag-07-failure-no-matching-query"
+      }
+    }
+  ]
+}

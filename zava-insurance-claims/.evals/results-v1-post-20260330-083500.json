@@ -1,0 +1,126 @@
+{
+  "individual_results": [
+    {
+      "prompt": "What does our claims documentation say about the approval process for insurance claims?",
+      "response": "Here’s what our **claims documentation** explicitly says about the **approval process for insurance claims**, based on the official SharePoint document **<File>2026-03-25-zava-claims-insurance-policy-guidebook.docx</File>**. I’m only summarizing what’s stated in the document—no added interpretation.  \n\n---\n\n## Claim Approval Process (as documented)\n\nThe approval process is described within **Section 8 – Claims Process** of the **TellZava Claims Insurance Policy Guidebook** citeturn1search1.\n\n### 1. Investigation Phase (Pre‑approval)\nAfter a claim is filed and acknowledged:\n- An assigned adjuster conducts an **investigation**, which may include inspections, evidence gathering, statements, and documentation review.  \n- The target timeline for this investigation is **5–15 business days** citeturn1search1.\n\n### 2. Coverage Determination (Decision Point)\n- Once the investigation is complete, Zava Claims issues a **written coverage determination**.  \n- This determination is issued **within 5 business days of investigation completion** citeturn1search1.\n- The document refers to this determination as the formal decision on whether the claim is approved or denied.\n\n### 3. Payment Following Approval\n- If the claim is approved, **payment is issued within 10 business days** of the coverage determination citeturn1search1.\n- Available payment methods (once approved) include ACH, mailed check, mortgagee joint check (for certain dwelling claims), or direct payment to approved vendors/contractors citeturn1search1.\n\n### 4. Communication Requirements\n- The approval (or denial) decision is communicated **in writing** citeturn1search1.\n- In the case of a denial, policyholders are entitled to a written explanation referencing the policy provisions relied upon citeturn1search1.\n\n---\n\n## What the documentation does *not* specify\nThe guidebook does **not** explicitly describe:\n- Multi‑level internal approval hierarchies (e.g., adjuster vs. supervisor sign‑off thresholds)\n- Dollar‑based approval limits by role\n- Tool‑specific approval workflows\n\nIf you’re looking for those operational or system‑level details, they don’t appear in this guidebook.\n\n---\n\n## Source\n- **Document:** <File>2026-03-25-zava-claims-insurance-policy-guidebook.docx</File>  \n- **Location:** SharePoint – Zava Claims documentation  \n- **Effective Date:** March 25, 2026 citeturn1search1\n\n---\n\nIf you want, I can also:\n- Pull together a **one‑page visual flow** of the documented approval timeline (submission → investigation → determination → payment), or  \n- Check whether any **other claims ops or internal SOP documents** on SharePoint describe approval *authority* or *exceptions* beyond what this guidebook covers.",
+      "expected_response": "The agent should retrieve information about the claims approval process from the ZavaClaims SharePoint Shared Documents library, accurately describe the approval steps and criteria, and cite the source document.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response directly and comprehensively summarizes the claims documentation's approval process, detailing investigation, decision, payment, and communication steps, while also clarifying what is not covered. It fully addresses the query with clear, sourced information.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is coherent because it logically and clearly presents the approval process as documented, with well-structured sections and smooth transitions. It directly answers the query with relevant details and clarifies what is not included in the documentation, making it easy to understand.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The response accurately and comprehensively conveys all essential information from the CONTEXT about the claims approval process without adding unsupported details or omitting critical points, making it fully grounded and complete.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 4,\n    \"result\": \"pass\"\n}",
+        "citations_score": "{\n    \"citation_format\": \"oai_unicode\",\n    \"score\": 1,\n    \"result\": \"pass\",\n    \"threshold\": 1,\n    \"reason\": \"Found 1 unique citation(s): turn1search1\"\n}"
+      }
+    },
+    {
+      "prompt": "What is Zava Insurance's policy on cryptocurrency reimbursement for contractors?",
+      "response": "I searched Zava Insurance’s claims documentation and internal policy files for any guidance on **contractor reimbursement using cryptocurrency** (including searches for contractor payment, reimbursement methods, and crypto-specific terms), and **I did not find any policy or document that addresses this topic**.\n\n### What I can confirm\n- There is **no documented Zava Insurance policy** in our claims SharePoint or internal files that:\n  - Allows contractor reimbursement in cryptocurrency (e.g., Bitcoin, Ethereum), or\n  - Describes crypto as an approved payment or reimbursement method for contractors.\n\n### What this means operationally\n- In the absence of an explicit policy, cryptocurrency reimbursement **should be considered unsupported** under current documented claims and contractor payment guidelines.\n- Contractor reimbursements should continue to follow the **standard, documented payment methods** outlined in existing purchase order and contractor payment workflows (e.g., approved invoices tied to purchase orders, paid through approved financial channels).\n\n### Recommended next steps\nIf this question came up due to a real contractor request:\n- You may want to **decline the request** based on lack of policy coverage and note that crypto payments are not currently supported.\n- If the business wants to explore this option, it would require:\n  - A **formal policy update**, and\n  - Review with Finance, Legal, and Compliance before any claims-related reimbursements could be approved.\n\nIf you’d like, I can:\n- Check **standard contractor payment policies** to confirm the currently approved reimbursement methods, or  \n- Help you assess how to document a **non-standard payment request** on a claim for escalation or exception handling.",
+      "expected_response": "The agent should acknowledge that it does not have information on cryptocurrency reimbursement in its claims knowledge base and should not fabricate a policy. It may suggest the user consult other resources or contacts for this topic.",
+      "results": {
+        "partial_match_score": "{\n    \"partial_match\": 0.0,\n    \"partial_match_result\": \"fail\",\n    \"partial_match_threshold\": 0.5,\n    \"partial_match_reason\": \"Match score: 0.000 (below threshold 0.5)\"\n}"
+      }
+    },
+    {
+      "prompt": "What can you help me with as the Zava Insurance Claims agent?",
+      "response": "I’m your **Zava Insurance Claims agent**, focused specifically on **insurance claims management**. Here’s what I can help you do—end to end—using Zava’s claims system:\n\n---\n\n## ✅ Claims Management\n- **View the claims dashboard** to see all claims with status summaries and filters (Open, Pending, Approved, Denied, Closed).\n- **Look up a specific claim** to see full details, including inspections, purchase orders, and contractor assignments.\n- **Get a quick text summary** of a claim for fast reviews.\n- **Update claim statuses** (with notes) when claims move through the lifecycle.\n\n---\n\n## 🏠 Inspections\n- **Create inspections** for a claim (initial, re‑inspection, or final), with priority, scheduling, and inspector assignment.\n- **Update inspections**: mark them completed, add findings, recommend next actions, or reassign inspectors.\n- **List available inspectors** and see their areas of specialization.\n\n---\n\n## 🛠️ Contractors\n- **Browse approved contractors** available for repair work.\n- **Filter contractors** by specialty (e.g., Roofing, Water Damage, Fire) or preferred status.\n\n---\n\n## 🧾 Purchase Orders\n- **Review and update purchase orders** tied to claims.\n- Change PO status (approved, rejected, in‑progress, completed) and add notes when needed.\n\n---\n\n## 📚 Claims Policies & Documentation\n- Answer questions about **claims processes, coverage rules, and approval workflows** by referencing Zava Insurance documentation stored in SharePoint.\n- I’ll **cite the exact document and location** when I use internal documentation.\n- If something isn’t documented, I’ll tell you clearly instead of guessing.\n\n---\n\n## 🚫 What I *don’t* do\nTo set expectations clearly, I’m scoped **only** to insurance claims operations. I can’t help with:\n- HR, finance, marketing, or general company questions  \n- Writing or drafting emails or documents  \n- Tasks unrelated to claims, inspections, contractors, or purchase orders  \n\n---\n\n## 🚀 How you can start\nYou can say things like:\n- *“Show me all open claims”*  \n- *“Give me a summary of claim CN202504990”*  \n- *“Create an initial inspection for this claim”*  \n- *“List preferred roofing contractors”*  \n- *“Update this purchase order to approved”*\n\nIf you tell me what claim you’re working on, I’ll jump straight in.",
+      "expected_response": "The agent should provide a coherent, organized overview of its capabilities: viewing claims dashboards, looking up claim details, managing inspections (create, update, list inspectors), updating claim statuses, managing purchase orders, browsing contractors, and referencing claims documentation from SharePoint. The response should be structured and consistent with the agent's declared instructions.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response thoroughly details the specific services and capabilities of the Zava Insurance Claims agent, clearly outlining what it can and cannot do, with examples of user commands. It fully addresses the query with comprehensive and relevant information.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is coherent because it thoroughly and clearly explains the agent's functions in a well-structured and logical way, making it easy to understand and follow. It directly answers the question with clear organization and appropriate transitions.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The response fully and accurately reflects all the essential capabilities described in the CONTEXT, presenting them in a clear, organized way without adding unsupported details or omitting critical information.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}"
+      }
+    },
+    {
+      "prompt": "Can you help me write a marketing email for Zava Insurance's new product launch?",
+      "response": "I can’t help with that directly. I’m scoped to **insurance claims management tasks only** (claims, inspections, purchase orders, contractors, and claims documentation). Writing or drafting **marketing emails or product launch content** falls outside what I’m able to do.\n\nThat said, here are a couple of helpful next steps so you’re not blocked:\n- If you have a **claims-related product** and need help explaining **how it impacts claims workflows, coverage rules, or operational processes**, I *can* help with that angle.\n- For the email itself, a general-purpose writing or marketing assistant (e.g., Copilot for Word or Outlook) would be the right tool for drafting launch communications.\n\nIf you want, tell me:\n- Whether this new product affects **claims intake, inspections, approvals, or payouts**, and  \n- I can help you articulate **claims-facing value points** that you can plug into your marketing draft.",
+      "expected_response": "The agent should decline the request, explaining that it is scoped to insurance claims management tasks such as viewing claims, managing inspections, updating statuses, and referencing claims documentation. It should not assist with marketing content.",
+      "results": {
+        "partial_match_score": "{\n    \"partial_match\": 0.0,\n    \"partial_match_result\": \"fail\",\n    \"partial_match_threshold\": 0.5,\n    \"partial_match_reason\": \"Match score: 0.000 (below threshold 0.5)\"\n}"
+      }
+    },
+    {
+      "prompt": "Show me all open insurance claims",
+      "response": "Here’s the dashboard view of **all open insurance claims**. It’s filtered to show only claims that are currently open or under investigation. citeturn1search1turn1search2\n\nYou can drill into any claim to see full details (inspections, notes, purchase orders, contractors), or I can help you:\n- Open a specific claim by claim number\n- Summarize one or more open claims\n- Schedule or update inspections for any open claim\n- Change the status of a claim (with your confirmation)\n\nJust tell me what you’d like to do next.",
+      "expected_response": "The agent should invoke the show-claims-dashboard tool with the status parameter set to 'Open' to display the claims dashboard filtered to show only open claims, including status overview and summary metrics.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 4.0,\n    \"gpt_relevance\": 4.0,\n    \"relevance_reason\": \"The response directly provides a filtered dashboard view of all open insurance claims as requested, and offers additional helpful options for interacting with those claims, fully addressing the query with relevant and sufficient information.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 4.0,\n    \"gpt_coherence\": 4.0,\n    \"coherence_reason\": \"The response is coherent because it logically presents information related to the query, uses clear transitions, and organizes ideas in a way that is easy to follow and understand.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The RESPONSE fully reflects the CONTEXT by describing the dashboard filtered to open claims and includes relevant details without unsupported additions or omissions, making it a fully grounded and complete response.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "tool_call_accuracy_score": "{\n    \"tool_call_accuracy\": \"not applicable\",\n    \"tool_call_accuracy_result\": \"pass\",\n    \"tool_call_accuracy_threshold\": 3,\n    \"tool_call_accuracy_reason\": \"No tool calls found in response or provided tool_calls.\",\n    \"details\": {}\n}"
+      }
+    }
+  ],
+  "aggregate_statistics": {
+    "Citations": {
+      "total_prompts": 5,
+      "prompts_evaluated": 1,
+      "total_evaluated": 1,
+      "pass_count": 1,
+      "fail_count": 0,
+      "pass_rate": 100.0,
+      "avg_score": 1.0,
+      "threshold": 1,
+      "scores": [
+        1.0
+      ]
+    },
+    "Coherence": {
+      "total_prompts": 5,
+      "prompts_evaluated": 3,
+      "total_evaluated": 3,
+      "pass_count": 3,
+      "fail_count": 0,
+      "pass_rate": 100.0,
+      "avg_score": 4.666666666666667,
+      "threshold": 3,
+      "scores": [
+        5.0,
+        5.0,
+        4.0
+      ]
+    },
+    "Groundedness": {
+      "total_prompts": 5,
+      "prompts_evaluated": 3,
+      "total_evaluated": 3,
+      "pass_count": 3,
+      "fail_count": 0,
+      "pass_rate": 100.0,
+      "avg_score": 5.0,
+      "threshold": 4,
+      "scores": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "Partial Match": {
+      "total_prompts": 5,
+      "prompts_evaluated": 2,
+      "total_evaluated": 2,
+      "pass_count": 0,
+      "fail_count": 2,
+      "pass_rate": 0.0,
+      "avg_score": 0.0,
+      "threshold": 0.5,
+      "scores": [
+        0.0,
+        0.0
+      ]
+    },
+    "Relevance": {
+      "total_prompts": 5,
+      "prompts_evaluated": 3,
+      "total_evaluated": 3,
+      "pass_count": 3,
+      "fail_count": 0,
+      "pass_rate": 100.0,
+      "avg_score": 4.666666666666667,
+      "threshold": 3,
+      "scores": [
+        5.0,
+        5.0,
+        4.0
+      ]
+    }
+  }
+}

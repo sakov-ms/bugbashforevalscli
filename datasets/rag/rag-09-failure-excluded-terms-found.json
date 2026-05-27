@@ -1,0 +1,29 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/M365-Copilot-Agent-Evals/main/schema/v1/eval-document.schema.json",
+  "description": "INTENTIONAL FAILURE — 'claim' will obviously appear in any claims-doc query. Evaluator MUST fail with diagnostic code 'excluded_terms_found' and report 'claim' under excludes_found.",
+  "default_evaluators": {
+    "Relevance": {},
+    "Coherence": {}
+  },
+  "items": [
+    {
+      "prompt": "What does our claims documentation say about claim submission timelines?",
+      "expected_response": "EVALUATOR EXPECTED TO FAIL. The selector 'claim' will match the agent's queryString, but the same term 'claim' is excluded — so the excludes check must trip. Expect diagnostic code 'excluded_terms_found' with excludes_found=['claim'].",
+      "evaluators": {
+        "RetrievalQuery": {
+          "capability": "OneDriveAndSharePoint",
+          "selector": "claim",
+          "includes": [
+            "submission"
+          ],
+          "excludes": [
+            "claim"
+          ]
+        }
+      },
+      "extensions": {
+        "id": "rag-09-failure-excluded-terms-found"
+      }
+    }
+  ]
+}

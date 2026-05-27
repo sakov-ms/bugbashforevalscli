@@ -1,0 +1,184 @@
+{
+  "individual_results": [
+    {
+      "prompt": "Look up the details for claim CN202504990",
+      "response": "Here are the full details for **Claim CN202504990**:\n\n---\n\n## **Claim Overview**\n- **Policy Holder:** Kimberly King  \n- **Policy Number:** POL-HO-2025-001  \n- **Property:** 9901 Valley Rd, Spokane, WA 99201  \n- **Date of Loss:** August 1, 2025  \n- **Date Reported:** August 2, 2025  \n- **Current Status:** ✅ **Approved**  \n- **Estimated Loss:** **$23,391**  \n- **Adjuster Assigned:** adj-007  \n\n**Damage Types**\n- Fire damage – severe severity  \n- Smoke damage  \n\n**Notes**\n- Awaiting documentation  \n- Urgent priority  \n- Claim approved per request  \n\n---\n\n## **Inspections**\n✅ **Completed**\n- **insp-001 (Initial, Low Priority)**  \n  - Inspector: Thomas Jones  \n  - Findings: Severe fire damage confirmed; immediate repairs recommended  \n\n- **insp-002 (Re‑inspection, Medium Priority)**  \n  - Inspector: Jennifer Davis  \n  - Findings: Roof damage confirmed; full replacement recommended  \n\n🟡 **Open / Pending**\n- Multiple initial inspections created (insp-031, insp-033, insp-035, insp-037, insp-038, insp-039, insp-040)  \n- Highest priority among them:  \n  - **insp-031 (High Priority)** scheduled for **March 30, 2026**, property listed as *45 Oak Street*  \n\n---\n\n## **Purchase Order**\n- **PO Number:** PO-2025-001  \n- **Contractor:** Wilson General Contractors (Preferred)  \n- **Total Amount:** **$15,209.86**  \n- **Status:** ⏳ **Pending**  \n- **Work Description:** Fire damage repair and restoration  \n- **Note:** Work to begin immediately upon approval  \n\n---\n\n## **Assigned Contractor**\n- **Name:** Robert Wilson  \n- **Business:** Wilson General Contractors  \n- **Specialties:** General Contracting, Structural Repair, Renovation  \n- **Rating:** 4.6 ⭐  \n- **Preferred Contractor:** Yes  \n\n---\n\n## **Next Steps You Might Want**\n- Assign an inspector to one of the open inspections  \n- Clean up or consolidate duplicate open inspections  \n- Approve or update the pending purchase order  \n- Update claim status notes if needed  \n\nTell me what you’d like to do next and I’ll take care of it for you.",
+      "expected_response": "The agent should invoke the show-claim-detail tool with claimId set to 'CN202504990' and display detailed information about the claim, including related inspections, purchase orders, and contractor assignments.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response directly and comprehensively provides detailed information about claim CN202504990, including status, inspections, purchase orders, and next steps, fully satisfying the query with clear, organized, and actionable data.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is highly coherent because it thoroughly and logically presents all relevant details about the claim in a clear, organized, and easy-to-follow manner, directly addressing the query with excellent structure and flow.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The RESPONSE accurately and thoroughly conveys all essential information about claim CN202504990, including inspections, purchase orders, and contractor assignments, exactly as requested in the CONTEXT, without adding unsupported details or omitting critical points.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "tool_call_accuracy_score": "{\n    \"tool_call_accuracy\": \"not applicable\",\n    \"tool_call_accuracy_result\": \"pass\",\n    \"tool_call_accuracy_threshold\": 3,\n    \"tool_call_accuracy_reason\": \"No tool calls found in response or provided tool_calls.\",\n    \"details\": {}\n}"
+      }
+    },
+    {
+      "prompt": "Show me claims for Amanda Rodriguez",
+      "response": "Here are the claims associated with **Amanda Rodriguez**. I’ve filtered the claims dashboard to show only her records.\n\n### 📄 Claim Overview\n- **Claim Number:** CN202504999  \n- **Status:** Open – Claim is under investigation  \n- **Property:** 1069 Lake View Dr, Tacoma, WA 98401  \n- **Date of Loss:** Aug 30, 2025  \n- **Damage Type:** Structural damage (severe), Foundation issues  \n- **Estimated Loss:** $31,486  \n\nYou’re currently viewing this claim in the dashboard, where you can drill into inspections, purchase orders, and contractor details as needed.\n\nIf you’d like, I can:\n- Open the full claim detail\n- Summarize inspection findings\n- Update the claim status\n- Create or update an inspection\n- Review related purchase orders\n\nJust tell me what you want to do next.",
+      "expected_response": "The agent should invoke the show-claims-dashboard tool with policyHolderName set to 'Amanda Rodriguez' to filter and display claims associated with that policy holder.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 4.0,\n    \"gpt_relevance\": 4.0,\n    \"relevance_reason\": \"The response directly provides detailed claims information for Amanda Rodriguez, including claim number, status, property, date, damage type, and estimated loss, fully addressing the query with relevant and sufficient data.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is coherent because it logically and clearly presents the requested information about Amanda Rodriguez's claims, with well-organized details and smooth transitions to next steps, making it easy to follow and understand.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The response accurately reflects the instruction to filter claims by Amanda Rodriguez and provides a detailed, relevant claim overview without contradicting or omitting critical information from the CONTEXT. It is fully grounded and complete.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "tool_call_accuracy_score": "{\n    \"tool_call_accuracy\": \"not applicable\",\n    \"tool_call_accuracy_result\": \"pass\",\n    \"tool_call_accuracy_threshold\": 3,\n    \"tool_call_accuracy_reason\": \"No tool calls found in response or provided tool_calls.\",\n    \"details\": {}\n}"
+      }
+    },
+    {
+      "prompt": "List all roofing contractors",
+      "response": "Here’s the complete list of **roofing contractors** currently available in the Zava Insurance network. I’ve included key details like location, ratings, and preferred status to help you choose quickly.\n\n### 🏠 Roofing Contractors\n\n1. **Thompson Roofing Solutions**  \n   - **Contact:** Mike Thompson  \n   - **Location:** Seattle, WA  \n   - **Specialties:** Roofing, Storm Damage Repair, Emergency Services  \n   - **Rating:** ⭐ 4.8  \n   - **Preferred:** ✅ Yes  \n   - **Status:** Active  \n   citeturn1search2\n\n2. **Thompson Emergency Restoration**  \n   - **Contact:** James Thompson  \n   - **Location:** Portland, OR  \n   - **Specialties:** Roofing, Storm Damage Repair, Emergency Services  \n   - **Rating:** ⭐ 4.8  \n   - **Preferred:** No  \n   - **Status:** Active  \n   citeturn1search2\n\n3. **Harris Construction Co**  \n   - **Contact:** Sarah Harris  \n   - **Location:** Salem, OR  \n   - **Specialties:** Roofing, Storm Damage Repair, Emergency Services  \n   - **Rating:** ⭐ 4.5  \n   - **Preferred:** No  \n   - **Status:** Active  \n   citeturn1search2\n\n4. **Johnson Emergency Restoration**  \n   - **Contact:** Kimberly Johnson  \n   - **Location:** Salem, OR  \n   - **Specialties:** Roofing, Storm Damage Repair, Emergency Services  \n   - **Rating:** ⭐ 4.0  \n   - **Preferred:** No  \n   - **Status:** Active  \n   citeturn1search2\n\n5. **Wright Emergency Restoration**  \n   - **Contact:** Melissa Wright  \n   - **Location:** Olympia, WA  \n   - **Specialties:** Roofing, Storm Damage Repair, Emergency Services  \n   - **Rating:** ⭐ 3.9  \n   - **Preferred:** No  \n   - **Status:** Active  \n   citeturn1search2\n\n6. **Jackson General Contractors**  \n   - **Contact:** James Jackson  \n   - **Location:** Eugene, OR  \n   -   **Specialties:** Roofing, Storm Damage Repair, Emergency Services  \n   - **Rating:** ⭐ 4.2  \n   - **Preferred:** No  \n   - **Status:** Active  \n   citeturn1search2\n\nIf you’d like, I can **filter this list further** (for example, *preferred-only*, *by state*, or *highest-rated*), or help **assign one to a claim** right away.",
+      "expected_response": "The agent should invoke the show-contractors tool with specialty set to 'Roofing' and display the filtered list of roofing contractors available for repair work.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response directly lists multiple roofing contractors with detailed information such as contact, location, specialties, ratings, and status, fully addressing the query. It also offers additional options to filter or assign contractors, enhancing usability.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is highly coherent because it logically and clearly presents a detailed list of roofing contractors as requested, with well-organized information and smooth transitions that guide the reader through the content.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The RESPONSE accurately and thoroughly presents the roofing contractors as requested in the CONTEXT, including all essential information without introducing unsupported or contradictory details, making it fully grounded and complete.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "tool_call_accuracy_score": "{\n    \"tool_call_accuracy\": \"not applicable\",\n    \"tool_call_accuracy_result\": \"pass\",\n    \"tool_call_accuracy_threshold\": 3,\n    \"tool_call_accuracy_reason\": \"No tool calls found in response or provided tool_calls.\",\n    \"details\": {}\n}"
+      }
+    },
+    {
+      "prompt": "Who are the available inspectors?",
+      "response": "Here’s the current list of **available inspectors** along with their **specializations**. You can assign any of them to an inspection right away. citeturn1search1\n\n### 🧑‍🔧 Inspectors & Specializations\n- **Melissa Robinson (inspector-001)** — HVAC, Mechanical Systems  \n- **Matthew Wilson (inspector-002)** — Roofing, Storm Damage  \n- **Jennifer Davis (inspector-003)** — Fire Damage, Smoke Assessment, Electrical  \n- **Rebecca Davis (inspector-004)** — HVAC, Mechanical Systems  \n- **Donald Walker (inspector-005)** — Wind Damage, Storm Damage  \n- **Christopher Brown (inspector-006)** — Hail Damage, Roof Assessment  \n- **James Anderson (inspector-007)** — General, Property Assessment  \n- **Anthony Taylor (inspector-008)** — Fire Damage, Smoke Assessment, Electrical  \n- **Emily Martin (inspector-009)** — Roofing, Storm Damage  \n- **Robert Rodriguez (inspector-010)** — Wind Damage, Storm Damage  \n- **John Smith (inspector-011)** — General, Property Assessment  \n- **Michael White (inspector-012)** — Mold, Water Damage, Air Quality  \n- **James Smith (inspector-013)** — Fire Damage, Smoke Assessment, Electrical  \n- **Jennifer Martinez (inspector-014)** — Fire Damage, Smoke Assessment, Electrical  \n- **David Thompson (inspector-015)** — Flood Damage, Water Intrusion  \n- **Melissa Lewis (inspector-016)** — Flood Damage, Water Intrusion  \n- **Nicole Taylor (inspector-017)** — HVAC, Mechanical Systems  \n- **Robert Allen (inspector-018)** — HVAC, Mechanical Systems  \n- **Sarah Allen (inspector-019)** — Water Damage, Plumbing  \n- **Thomas Jones (inspector-020)** — Fire Damage, Smoke Assessment, Electrical  \n\nIf you tell me **which claim** you’re working on or the **type of damage** (e.g., fire, water, roofing), I can recommend the best inspector and assign them immediately.",
+      "expected_response": "The agent should invoke the list-inspectors tool and display all available inspectors with their specializations.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response directly lists all available inspectors by name and specialization, fully addressing the query. It also offers additional helpful context by inviting the user to specify claim or damage type for tailored recommendations, enhancing usefulness.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is coherent because it logically and clearly presents the list of available inspectors with their specializations, directly answering the question. The structure is organized and easy to follow, with appropriate transitions and additional helpful context, making it a highly coherent response.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The response fully adheres to the context by listing all available inspectors and their specializations without omitting any critical details or adding unsupported information, making it a complete and accurate reflection of the context.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "tool_call_accuracy_score": "{\n    \"tool_call_accuracy\": \"not applicable\",\n    \"tool_call_accuracy_result\": \"pass\",\n    \"tool_call_accuracy_threshold\": 3,\n    \"tool_call_accuracy_reason\": \"No tool calls found in response or provided tool_calls.\",\n    \"details\": {}\n}"
+      }
+    },
+    {
+      "prompt": "Give me a quick summary of claim CN202504991",
+      "response": "Here’s a quick snapshot of **claim CN202504991**:\n\n- **Policy holder:** Christopher Thompson citeturn1search1  \n- **Property:** 259 Valley Rd, Vancouver, WA 98660 citeturn1search1  \n- **Date of loss:** December 8, 2025 citeturn1search1  \n- **Damage type:** Severe vandalism resulting in property damage citeturn1search1  \n- **Estimated loss:** $29,794 citeturn1search1  \n- **Current status:** *Open – Under Investigation* citeturn1search1  \n- **Inspections:** None scheduled yet citeturn1search1  \n- **Purchase orders:** None created citeturn1search1  \n\nIf you’d like, I can:\n- Schedule an initial inspection,\n- Show the full claim detail, or\n- Help move the investigation forward (e.g., assign an inspector or contractor).",
+      "expected_response": "The agent should invoke the get-claim-summary tool with claimId set to 'CN202504991' and return a concise text summary of the claim's key details.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response directly summarizes claim CN202504991 with detailed, relevant information including policy holder, property, loss date, damage type, estimated loss, and status, fully addressing the query with a clear and concise overview.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is well-organized, directly addresses the query with relevant details, and presents information in a clear, logical sequence, making it easy to understand and follow.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The RESPONSE is fully grounded and complete as it accurately and thoroughly conveys the key details of the claim as requested by the CONTEXT without introducing unsupported information or omitting critical details.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "tool_call_accuracy_score": "{\n    \"tool_call_accuracy\": \"not applicable\",\n    \"tool_call_accuracy_result\": \"pass\",\n    \"tool_call_accuracy_threshold\": 3,\n    \"tool_call_accuracy_reason\": \"No tool calls found in response or provided tool_calls.\",\n    \"details\": {}\n}"
+      }
+    },
+    {
+      "prompt": "Create a high-priority initial inspection for claim CN202504993 scheduled for next Monday",
+      "response": "✅ **High‑Priority Initial Inspection Created**\n\nThe initial inspection for **Claim CN202504993** has been successfully set up with the following details:\n\n- **Inspection type:** Initial  \n- **Priority:** High  \n- **Scheduled date:** **Monday, April 6, 2026**  \n- **Status:** Open  \n- **Inspection ID:** insp‑043  \n\nIf you'd like, I can:\n- Assign a specific inspector\n- Add inspection instructions\n- Update the scheduled date or priority\n- Pull up the full claim details for review\n\nJust let me know what you want to do next.",
+      "expected_response": "The agent should invoke the create-inspection tool with claimNumber 'CN202504993', taskType 'initial', priority 'high', and a scheduledDate corresponding to next Monday. It should confirm the inspection was created.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response directly confirms creation of the requested high-priority initial inspection for claim CN202504993 scheduled for next Monday, providing detailed relevant information and offering next steps, fully satisfying the query.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is coherent because it logically and clearly presents the information requested, with well-structured details and appropriate transitions that make it easy to understand and follow.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The response fully adheres to the context by confirming the creation of the inspection with all specified parameters and does not omit any critical details. The additional information provided does not contradict or omit essential context details, making the response fully grounded and complete.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "tool_call_accuracy_score": "{\n    \"tool_call_accuracy\": \"not applicable\",\n    \"tool_call_accuracy_result\": \"pass\",\n    \"tool_call_accuracy_threshold\": 3,\n    \"tool_call_accuracy_reason\": \"No tool calls found in response or provided tool_calls.\",\n    \"details\": {}\n}"
+      }
+    },
+    {
+      "prompt": "Show me only our preferred contractors",
+      "response": "Here are **only Zava Insurance’s preferred contractors**, filtered for you. ✅  \n(Preferred status indicates vetted partners approved for claims repair work.)\n\n### ✅ Preferred Contractors List\n- **Thompson Roofing Solutions** – Roofing, Storm Damage Repair, Emergency Services (⭐ 4.8) citeturn1search2  \n- **Pacific Water Restoration** – Water Damage Restoration, Mold Remediation (⭐ 4.9) citeturn1search2  \n- **Wilson General Contractors** – Structural Repair, Renovation (⭐ 4.6) citeturn1search2  \n- **Jones Building Services** – Emergency Services, Disaster Recovery (⭐ 4.0) citeturn1search2  \n- **King Damage Repair Inc** – Electrical Services, System Upgrades (⭐ 3.8) citeturn1search2  \n- **Young Repair Specialists** – Exterior Siding, Windows & Doors (⭐ 4.0) citeturn1search2  \n- **Miller Restoration Services** – Siding, Windows & Doors (⭐ 3.5) citeturn1search2  \n- **Anderson Damage Repair Inc (James Anderson)** – Plumbing Services (⭐ 3.7) citeturn1search2  \n- **Allen Damage Repair Inc** – 24/7 Emergency & Disaster Recovery (⭐ 4.6) citeturn1search2  \n- **Lewis Emergency Restoration** – Emergency & Disaster Recovery (⭐ 4.4) citeturn1search2  \n\n> ⚠️ Note: Some preferred contractors are currently **inactive** and may not be assignable until reactivated. If you want, I can **filter to active preferred contractors only**, or **narrow this list by specialty** (e.g., roofing, water damage, fire).",
+      "expected_response": "The agent should invoke the show-contractors tool with preferredOnly set to true and display only the preferred contractors.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response directly lists only the preferred contractors as requested, clearly indicating their status and specialties. It also offers additional useful context about active status and filtering options, enhancing understanding and usability.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is coherent because it logically and clearly presents the requested information with appropriate structure and transitions, making it easy to understand and follow.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The RESPONSE accurately and thoroughly conveys the essential information from the CONTEXT, listing only preferred contractors as instructed, without omitting critical details or adding unsupported information.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "tool_call_accuracy_score": "{\n    \"tool_call_accuracy\": \"not applicable\",\n    \"tool_call_accuracy_result\": \"pass\",\n    \"tool_call_accuracy_threshold\": 3,\n    \"tool_call_accuracy_reason\": \"No tool calls found in response or provided tool_calls.\",\n    \"details\": {}\n}"
+      }
+    },
+    {
+      "prompt": "What is the company's vacation policy for employees?",
+      "response": "I can’t help with that, sorry.  \n\nI’m scoped specifically to **Zava Insurance claims management** (claims, inspections, purchase orders, contractors, and claims documentation). Company-wide **HR policies**—like vacation, time off, or benefits—are outside my supported capabilities.\n\nFor Microsoft’s vacation policy, the best sources are:\n- **Microsoft HR / Benefits portal** (internal HR site)\n- **Ask HR** or People Support in Microsoft\n- Your manager or HR partner for role- or region-specific details\n\nIf you’d like, I *can* help with anything claims-related right now—such as reviewing a claim, scheduling or updating an inspection, or finding claims documentation.",
+      "expected_response": "The agent should decline this request, explaining that it is a claims management assistant and cannot answer HR or general company policy questions. It should redirect the user to appropriate resources.",
+      "results": {
+        "partial_match_score": "{\n    \"partial_match\": 0.0,\n    \"partial_match_result\": \"fail\",\n    \"partial_match_threshold\": 0.5,\n    \"partial_match_reason\": \"Match score: 0.000 (below threshold 0.5)\"\n}"
+      }
+    },
+    {
+      "prompt": "Can you send an email to the adjuster assigned to claim CN202504999?",
+      "response": "I can help **with the claim itself**, but I’m not able to **send or compose emails**.\n\nHere’s what I *can* do for claim **CN202504999** instead:\n\n- Look up the **claim details** (including who the adjuster is, if listed)\n- Share the **adjuster’s name or internal reference** so you can reach out directly\n- Add a **note to the claim** documenting that you contacted (or plan to contact) the adjuster\n- Update claim status or coordinate inspections if needed\n\nIf you’d like, say one of these and I’ll do it right away:\n- *“Show me the details for claim CN202504999”*\n- *“Add a note to the claim that I emailed the adjuster”*\n- *“Who is the adjuster on this claim?”*\n\nThat’ll get you the info you need quickly without leaving the claims workflow.",
+      "expected_response": "The agent should explain that it cannot send emails. It may offer to look up the claim details so the user can identify the assigned adjuster, but it should not claim to have email-sending capability.",
+      "results": {
+        "partial_match_score": "{\n    \"partial_match\": 0.0,\n    \"partial_match_result\": \"fail\",\n    \"partial_match_threshold\": 0.5,\n    \"partial_match_reason\": \"Match score: 0.000 (below threshold 0.5)\"\n}"
+      }
+    },
+    {
+      "prompt": "Show me all denied claims and then give me the details on the first one",
+      "response": "### ✅ Denied Claims Overview\n\nHere are **all claims currently marked as _Denied_** displayed in the system. You can review them collectively in the claims dashboard to compare claim numbers, policyholders, loss types, and decision statuses. citeturn1search1\n\n---\n\n### 🔍 Claim Details — First Denied Claim\n\nI checked the dashboard results, and **there are currently no claims listed with a _Denied_ status** in the system. Because of that, there isn’t a “first” denied claim to drill into for detailed review at the moment. citeturn1search1\n\n---\n\nIf you’d like, I can:\n- Show **claims with a different status** (e.g., *Pending*, *Approved*, *Under Investigation*)\n- Help you **search for a specific claim number or policyholder**\n- Walk through **why a claim was denied historically** if you have a claim ID in mind\n\nJust let me know how you’d like to proceed.",
+      "expected_response": "The agent should first invoke show-claims-dashboard with status 'Denied' to display denied claims, and then invoke show-claim-detail for the first denied claim to provide its full details. The response should address both parts of the request.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 4.0,\n    \"gpt_relevance\": 4.0,\n    \"relevance_reason\": \"The response directly addresses the query by listing all denied claims and then explaining that no denied claims currently exist, so no details can be provided. It also offers helpful next steps, fully satisfying the request.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 4.0,\n    \"gpt_coherence\": 4.0,\n    \"coherence_reason\": \"The response is coherent because it logically addresses the query by first showing the denied claims overview, then explaining the absence of denied claims, and finally offering next steps. The flow is smooth, and the ideas are well connected, making it easy to understand.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The response accurately follows the instructions in the CONTEXT by showing denied claims and then attempting to show the first denied claim details, explaining the absence of denied claims. It does not add unsupported information or omit critical details, making it fully grounded and complete.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "tool_call_accuracy_score": "{\n    \"tool_call_accuracy\": \"not applicable\",\n    \"tool_call_accuracy_result\": \"pass\",\n    \"tool_call_accuracy_threshold\": 3,\n    \"tool_call_accuracy_reason\": \"No tool calls found in response or provided tool_calls.\",\n    \"details\": {}\n}"
+      }
+    }
+  ],
+  "aggregate_statistics": {
+    "Coherence": {
+      "total_prompts": 10,
+      "prompts_evaluated": 8,
+      "total_evaluated": 8,
+      "pass_count": 8,
+      "fail_count": 0,
+      "pass_rate": 100.0,
+      "avg_score": 4.875,
+      "threshold": 3,
+      "scores": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        4.0
+      ]
+    },
+    "Groundedness": {
+      "total_prompts": 10,
+      "prompts_evaluated": 8,
+      "total_evaluated": 8,
+      "pass_count": 8,
+      "fail_count": 0,
+      "pass_rate": 100.0,
+      "avg_score": 5.0,
+      "threshold": 3,
+      "scores": [
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ]
+    },
+    "Partial Match": {
+      "total_prompts": 10,
+      "prompts_evaluated": 2,
+      "total_evaluated": 2,
+      "pass_count": 0,
+      "fail_count": 2,
+      "pass_rate": 0.0,
+      "avg_score": 0.0,
+      "threshold": 0.5,
+      "scores": [
+        0.0,
+        0.0
+      ]
+    },
+    "Relevance": {
+      "total_prompts": 10,
+      "prompts_evaluated": 8,
+      "total_evaluated": 8,
+      "pass_count": 8,
+      "fail_count": 0,
+      "pass_rate": 100.0,
+      "avg_score": 4.75,
+      "threshold": 3,
+      "scores": [
+        5.0,
+        4.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0,
+        4.0
+      ]
+    }
+  }
+}

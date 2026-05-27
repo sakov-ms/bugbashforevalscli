@@ -1,0 +1,49 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.6/schema.json",
+    "version": "v1.6",
+    "name": "Zava Insurance Claims${{APP_NAME_SUFFIX}}",
+    "description": "Manage Zava Insurance claims, inspections, contractors, and purchase orders.",
+    "instructions": "$[file('instruction.txt')]",
+    "capabilities": [
+        {
+            "name": "OneDriveAndSharePoint",
+            "items_by_url": [
+                {
+                    "url": "https://microsoft.sharepoint-df.com/teams/ZavaClaims/Shared Documents"
+                }
+            ]
+        }
+    ],
+    "conversation_starters": [
+        {
+            "title": "Claims Dashboard",
+            "text": "Show me the claims dashboard"
+        },
+        {
+            "title": "Open Claims",
+            "text": "Show me all open insurance claims"
+        },
+        {
+            "title": "Claim Details",
+            "text": "Show me the details for claim CN202504990"
+        },
+        {
+            "title": "Available Contractors",
+            "text": "List all available contractors for repair work"
+        },
+        {
+            "title": "Create Inspection",
+            "text": "Create a new inspection for claim CN202504990"
+        },
+        {
+            "title": "Claims Policy Info",
+            "text": "What does our claims documentation say about the approval process?"
+        }
+    ],
+    "actions": [
+        {
+            "id": "zavaInsuranceMcpPlugin",
+            "file": "zava-insurance-mcp-plugin.json"
+        }
+    ]
+}

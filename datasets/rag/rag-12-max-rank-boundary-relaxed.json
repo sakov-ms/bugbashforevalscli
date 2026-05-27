@@ -1,0 +1,28 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/M365-Copilot-Agent-Evals/main/schema/v1/eval-document.schema.json",
+  "description": "BOUNDARY TEST (paired with rag-11): same prompt and extract phrase, but max_rank=20. Should now PASS, proving max_rank is honored.",
+  "default_evaluators": {
+    "Relevance": {},
+    "Coherence": {}
+  },
+  "items": [
+    {
+      "prompt": "How long should a claims investigation take according to our claims timeline?",
+      "expected_response": "Expected agent response (same content as rag-11): per §8.3 Claims Timeline of the policy guidebook, the Investigation phase takes 5–15 business days and covers evidence gathering, inspections, statements, and documentation review. Source: 2026-03-25-zava-claims-insurance-policy-guidebook.docx. EVALUATOR OUTCOME: with max_rank=20 this test is expected to PASS, proving max_rank is honored.",
+      "evaluators": {
+        "RetrievalResult": {
+          "capability": "OneDriveAndSharePoint",
+          "max_rank": 20,
+          "expected_items": [
+            {
+              "retrievalExtract_contains": "5–15 business days"
+            }
+          ]
+        }
+      },
+      "extensions": {
+        "id": "rag-12-max-rank-boundary-relaxed"
+      }
+    }
+  ]
+}

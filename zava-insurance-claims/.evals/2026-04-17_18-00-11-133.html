@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M365 Copilot Agents Evaluation Scores Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; padding: 1.5em; background: #fafafa; }
+        h1 { margin-top: 0; color: #2c3e50; }
+        h2 { color: #34495e; margin-top: 2em; }
+        table { border-collapse: collapse; width: 100%; margin: 1.5em 0; }
+        th, td { border: 1px solid #ccc; padding: 10px 12px; text-align: left; vertical-align: top; }
+        th { background: #f4f4f4; font-weight: 600; }
+        details { padding: 0.75em 1em; border: 1px solid #ddd; border-radius: 6px; background: #fff; }
+        details summary { cursor: pointer; font-weight: 600; margin: -0.75em -1em 0.75em; padding: 0.75em 1em; background: #eef2f5; border-bottom: 1px solid #ddd; }
+        .pass { background: #d4edda; color: #155724; }
+        .fail { background: #f8d7da; color: #721c24; }
+        .score-details { font-size: 0.95em; color: #333; background: #f9f9f9; }
+        .score-details table { margin-top: 0.5em !important; }
+        .score-details th { background: #e9ecef; }
+        .aggregate-section { margin: 2em 0; }
+        .aggregate-section h2 { color: #34495e; margin-top: 0; }
+        .pass-rate-excellent { background: #d1f2eb; color: #186a3b; font-weight: bold; }
+        .pass-rate-good { background: #fef9e7; color: #7d6608; font-weight: bold; }
+        .pass-rate-poor { background: #fadbd8; color: #b03a2e; font-weight: bold; }
+        .individual-results { margin-top: 3em; }
+    </style>
+</head>
+<body>
+    <h1> M365 Copilot Agents Evaluation Report</h1>
+<div class="aggregate-section">
+<h2> Aggregate Statistics (10 prompts evaluated)</h2>
+<table>
+<tr><th>Metric</th><th>Pass Rate</th><th>Passed</th><th>Failed</th><th>Avg Score</th><th>Threshold</th></tr>
+
+                <tr>
+                    <td><strong>Relevance</strong></td>
+                    <td class="pass-rate-excellent">80.0%</td>
+                    <td class="pass">8</td>
+                    <td class="fail">2</td>
+                    <td>3.60</td>
+                    <td>3</td>
+                </tr>
+                
+
+                <tr>
+                    <td><strong>Coherence</strong></td>
+                    <td class="pass-rate-excellent">100.0%</td>
+                    <td class="pass">10</td>
+                    <td class="fail">0</td>
+                    <td>4.00</td>
+                    <td>3</td>
+                </tr>
+                
+
+                <tr>
+                    <td><strong>Groundedness</strong></td>
+                    <td class="pass-rate-excellent">90.0%</td>
+                    <td class="pass">9</td>
+                    <td class="fail">1</td>
+                    <td>4.30</td>
+                    <td>3</td>
+                </tr>
+                
+
+                <tr>
+                    <td><strong>Citations</strong></td>
+                    <td class="pass-rate-excellent">80.0%</td>
+                    <td class="pass">8</td>
+                    <td class="fail">2</td>
+                    <td>0.90</td>
+                    <td>1</td>
+                </tr>
+                
+
+                <tr>
+                    <td><strong>Tool Call Accuracy</strong></td>
+                    <td class="pass-rate-poor">50.0%</td>
+                    <td class="pass">1</td>
+                    <td class="fail">1</td>
+                    <td>3.50</td>
+                    <td>3</td>
+                </tr>
+                
+</table>
+</div>
+<div class="individual-results">
+<h2> Individual Results</h2>
+<h3>Prompt 1: Look up the details for claim CN202504990</h3>
+<table>
+<tr><th>Response</th><td><p>Here are the details for claim <strong>citeturn1search3</strong>:</p>
+<h3>Claim Information</h3>
+<ul>
+<li><strong>Policy Holder</strong>: Kimberly King</li>
+<li><strong>Policy Number</strong>: POL-HO-2025-001</li>
+<li><strong>Property Address</strong>: 9901 Valley Rd, Spokane, WA 99201</li>
+<li><strong>Date of Loss</strong>: August 1, 2025</li>
+<li><strong>Date Reported</strong>: August 2, 2025</li>
+<li><strong>Status</strong>: Approved</li>
+<li><strong>Damage Types</strong>: </li>
+<li>Fire damage (severe severity)</li>
+<li>Smoke damage</li>
+<li><strong>Description</strong>: Fire damage to property requiring assessment and repair</li>
+<li><strong>Estimated Loss</strong>: \$23,391</li>
+<li><strong>Adjuster Assigned</strong>: adj-007</li>
+<li><strong>Notes</strong>:</li>
+<li>Awaiting documentation</li>
+<li>Urgent priority</li>
+<li>Claim approved per request</li>
+</ul>
+<h3>Inspections</h3>
+<ol>
+<li><strong>Inspection ID</strong>: insp-001</li>
+<li><strong>Type</strong>: Initial</li>
+<li><strong>Priority</strong>: Low</li>
+<li><strong>Status</strong>: Completed</li>
+<li><strong>Scheduled Date</strong>: August 3, 2025</li>
+<li><strong>Inspector</strong>: citeturn1search3</li>
+<li><strong>Findings</strong>: Roof damage is consistent with the claim report.</li>
+<li><strong>Recommended Actions</strong>: Recommend full roof replacement.</li>
+<li>
+<p><strong>Photos</strong>: <a href="https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true">IMG-01</a></p>
+</li>
+<li>
+<p><strong>Inspection ID</strong>: insp-002</p>
+</li>
+<li><strong>Type</strong>: Re-inspection</li>
+<li><strong>Priority</strong>: Medium</li>
+<li><strong>Status</strong>: Completed</li>
+<li><strong>Scheduled Date</strong>: August 9, 2025</li>
+<li><strong>Inspector</strong>: citeturn1search3</li>
+<li><strong>Findings</strong>: Roof damage confirmed, replacement needed</li>
+<li><strong>Recommended Actions</strong>: Full replacement recommended, Obtain multiple quotes</li>
+<li>
+<p><strong>Photos</strong>: <a href="https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true">IMG-02</a></p>
+</li>
+<li>
+<p><strong>Inspection ID</strong>: insp-031</p>
+</li>
+<li><strong>Type</strong>: Initial</li>
+<li><strong>Priority</strong>: High</li>
+<li><strong>Status</strong>: Open</li>
+<li><strong>Scheduled Date</strong>: March 30, 2026</li>
+<li><strong>Property</strong>: 45 Oak Street</li>
+<li>
+<p><strong>Instructions</strong>: Initial high-priority inspection scheduled for next week.</p>
+</li>
+<li>
+<p><strong>Inspection ID</strong>: insp-033</p>
+</li>
+<li><strong>Type</strong>: Initial</li>
+<li><strong>Priority</strong>: Medium</li>
+<li>
+<p><strong>Status</strong>: Open</p>
+</li>
+<li>
+<p><strong>Inspection ID</strong>: insp-035</p>
+</li>
+<li><strong>Type</strong>: Initial</li>
+<li><strong>Priority</strong>: Medium</li>
+<li>
+<p><strong>Status</strong>: Open</p>
+</li>
+<li>
+<p><strong>Inspection ID</strong>: insp-037</p>
+</li>
+<li><strong>Type</strong>: Initial</li>
+<li><strong>Priority</strong>: Medium</li>
+<li>
+<p><strong>Status</strong>: Open</p>
+</li>
+<li>
+<p><strong>Inspection ID</strong>: insp-038</p>
+</li>
+<li><strong>Type</strong>: Initial</li>
+<li><strong>Priority</strong>: Medium</li>
+<li>
+<p><strong>Status</strong>: Open</p>
+</li>
+<li>
+<p><strong>Inspection ID</strong>: insp-039</p>
+</li>
+<li><strong>Type</strong>: Initial</li>
+<li><strong>Priority</strong>: Medium</li>
+<li>
+<p><strong>Status</strong>: Open</p>
+</li>
+<li>
+<p><strong>Inspection ID</strong>: insp-040</p>
+</li>
+<li><strong>Type</strong>: Initial</li>
+<li><strong>Priority</strong>: Medium</li>
+<li>
+<p><strong>Status</strong>: Open</p>
+</li>
+<li>
+<p><strong>Inspection ID</strong>: insp-044</p>
+<ul>
+<li><strong>Type</strong>: Initial</li>
+<li><strong>Priority</strong>: High</li>
+<li><strong>Status</strong>: Open</li>
+<li><strong>Scheduled Date</strong>: April 6, 2026</li>
+</ul>
+</li>
+</ol>
+<h3>Purchase Orders</h3>
+<ul>
+<li><strong>PO Number</strong>: PO-2025-001</li>
+<li><strong>Contractor</strong>: citeturn1search3 (Wilson General Contractors)</li>
+<li><strong>Work Description</strong>: Fire damage - severe severity repair and restoration services</li>
+<li><strong>Line Items</strong>:<ul>
+<li>Water damage restoration: \$3,006</li>
+<li>Labor and installation services: \$4,410</li>
+<li>Labor and installation services: \$3,240</li>
+<li>Emergency repair services: \$3,298</li>
+</ul>
+</li>
+<li><strong>Subtotal</strong>: \$13,954</li>
+<li><strong>Tax</strong>: \$1,255.86</li>
+<li><strong>Total</strong>: \$15,209.86</li>
+<li><strong>Status</strong>: Pending</li>
+<li><strong>Notes</strong>: Work to begin immediately upon approval</li>
+</ul>
+<p>If you need more details or further assistance, please let me know!</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should invoke the show-claim-detail tool with claimId set to 'CN202504990' and display detailed information about the claim, including related inspections, purchase orders, and contractor assignments.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_d13fa_row0_col1, #T_d13fa_row1_col1, #T_d13fa_row2_col1, #T_d13fa_row3_col1, #T_d13fa_row4_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+</style>
+<table id="T_d13fa" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_d13fa_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_d13fa_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_d13fa_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_d13fa_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_d13fa_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_d13fa_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_d13fa_row0_col1" class="data row0 col1" >pass</td>
+      <td id="T_d13fa_row0_col2" class="data row0 col2" >5</td>
+      <td id="T_d13fa_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_d13fa_row0_col4" class="data row0 col4" >The response directly provides detailed and comprehensive information about claim CN202504990, including policy details, inspections, purchase orders, and status, fully addressing the query with extensive relevant data.</td>
+    </tr>
+    <tr>
+      <td id="T_d13fa_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_d13fa_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_d13fa_row1_col2" class="data row1 col2" >5</td>
+      <td id="T_d13fa_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_d13fa_row1_col4" class="data row1 col4" >The response is coherent because it logically and clearly presents detailed claim information in an organized manner that directly addresses the query. The structure and flow make it easy to follow and understand the claim details.</td>
+    </tr>
+    <tr>
+      <td id="T_d13fa_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_d13fa_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_d13fa_row2_col2" class="data row2 col2" >5</td>
+      <td id="T_d13fa_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_d13fa_row2_col4" class="data row2 col4" >The RESPONSE fully adheres to the CONTEXT by providing all essential claim details, inspections, and purchase orders as requested, without adding unsupported information or omitting critical points.</td>
+    </tr>
+    <tr>
+      <td id="T_d13fa_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_d13fa_row3_col1" class="data row3 col1" >pass</td>
+      <td id="T_d13fa_row3_col2" class="data row3 col2" >1</td>
+      <td id="T_d13fa_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_d13fa_row3_col4" class="data row3 col4" >Found 1 unique citation(s) : turn1search3</td>
+    </tr>
+    <tr>
+      <td id="T_d13fa_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_d13fa_row4_col1" class="data row4 col1" >pass</td>
+      <td id="T_d13fa_row4_col2" class="data row4 col2" >not applicable</td>
+      <td id="T_d13fa_row4_col3" class="data row4 col3" >3</td>
+      <td id="T_d13fa_row4_col4" class="data row4 col4" >No tool calls found in response or provided tool_calls.</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 1 of 10</em></p>
+<hr>
+<h3>Prompt 2: Show me claims for Amanda Rodriguez</h3>
+<table>
+<tr><th>Response</th><td><p>It appears there are no specific claims for citeturn1search2 found in the current search results.</p>
+<p>Would you like me to assist you with anything else related to claims or provide information from the Zava Claims Insurance Policy Guidebook?</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should invoke the show-claims-dashboard tool with policyHolderName set to 'Amanda Rodriguez' to filter and display claims associated with that policy holder.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_b300e_row0_col1, #T_b300e_row2_col1 {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+#T_b300e_row1_col1, #T_b300e_row3_col1, #T_b300e_row4_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+</style>
+<table id="T_b300e" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_b300e_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_b300e_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_b300e_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_b300e_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_b300e_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_b300e_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_b300e_row0_col1" class="data row0 col1" >fail</td>
+      <td id="T_b300e_row0_col2" class="data row0 col2" >2</td>
+      <td id="T_b300e_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_b300e_row0_col4" class="data row0 col4" >The response directly addresses the query by stating no claims were found for Amanda Rodriguez, which is relevant. However, it is vague and does not provide any specific claim details or further clarification, making it only superficially helpful.</td>
+    </tr>
+    <tr>
+      <td id="T_b300e_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_b300e_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_b300e_row1_col2" class="data row1 col2" >4</td>
+      <td id="T_b300e_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_b300e_row1_col4" class="data row1 col4" >The response is coherent because it directly addresses the query with a clear and logical explanation, followed by a relevant offer for further assistance. The ideas are well-organized and connected, making the response easy to understand and follow.</td>
+    </tr>
+    <tr>
+      <td id="T_b300e_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_b300e_row2_col1" class="data row2 col1" >fail</td>
+      <td id="T_b300e_row2_col2" class="data row2 col2" >2</td>
+      <td id="T_b300e_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_b300e_row2_col4" class="data row2 col4" >The RESPONSE does not follow the CONTEXT's instruction to use 'Amanda Rodriguez' as the filter and instead refers to an unrelated placeholder, making it contradictory to the CONTEXT.</td>
+    </tr>
+    <tr>
+      <td id="T_b300e_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_b300e_row3_col1" class="data row3 col1" >pass</td>
+      <td id="T_b300e_row3_col2" class="data row3 col2" >1</td>
+      <td id="T_b300e_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_b300e_row3_col4" class="data row3 col4" >Found 1 unique citation(s) : turn1search2</td>
+    </tr>
+    <tr>
+      <td id="T_b300e_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_b300e_row4_col1" class="data row4 col1" >pass</td>
+      <td id="T_b300e_row4_col2" class="data row4 col2" >5</td>
+      <td id="T_b300e_row4_col3" class="data row4 col3" >3</td>
+      <td id="T_b300e_row4_col4" class="data row4 col4" >Let's think step by step: The user query is to show claims for Amanda Rodriguez. The agent called the tool 'search_enterprise_files' with the argument 'claims for Amanda Rodriguez', which is directly relevant to the user's request. The parameter passed is correctly extracted from the user query and is appropriate for the tool's purpose. The tool returned a relevant file snippet related to claims, indicating the tool call was successful and useful. There is only one tool call made, which is sufficient to address the user's query at this stage. No errors occurred, and no excessive or missing tool calls are evident. Therefore, the tool call is fully relevant, correct, and efficient, leading to a correct output that addresses the user's query without any issues.</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 2 of 10</em></p>
+<hr>
+<h3>Prompt 3: List all roofing contractors</h3>
+<table>
+<tr><th>Response</th><td><p>Here are the roofing contractors available:</p>
+<ol>
+<li><strong>citeturn1search3</strong></li>
+<li><strong>Business Name</strong>: Thompson Roofing Solutions</li>
+<li><strong>Email</strong>: mike@thompsonroofing.com</li>
+<li><strong>Phone</strong>: 555-0789</li>
+<li><strong>Address</strong>: 456 Industrial Ave, Seattle, WA, 98102, USA</li>
+<li><strong>License Number</strong>: WA-ROOF-2024-001</li>
+<li><strong>Insurance Certificate</strong>: INS-CERT-2024-001</li>
+<li><strong>Specialties</strong>: Roofing, Storm Damage Repair, Emergency Services</li>
+<li><strong>Rating</strong>: 4.8</li>
+<li><strong>Preferred</strong>: Yes</li>
+<li>
+<p><strong>Active</strong>: Yes</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: Thompson Emergency Restoration</li>
+<li><strong>Email</strong>: james.thompson@contractor4.com</li>
+<li><strong>Phone</strong>: 555-2320</li>
+<li><strong>Address</strong>: 7976 Oak Ave, Portland, OR, 97201, USA</li>
+<li><strong>License Number</strong>: OR-ROF-2024-004</li>
+<li><strong>Insurance Certificate</strong>: INS-CERT-2024-004</li>
+<li><strong>Specialties</strong>: Roofing, Storm Damage Repair, Emergency Services</li>
+<li><strong>Rating</strong>: 4.8</li>
+<li><strong>Preferred</strong>: No</li>
+<li>
+<p><strong>Active</strong>: Yes</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: Harris Construction Co</li>
+<li><strong>Email</strong>: sarah.harris@contractor10.com</li>
+<li><strong>Phone</strong>: 555-4636</li>
+<li><strong>Address</strong>: 3837 Cedar Ln, Salem, OR, 97301, USA</li>
+<li><strong>License Number</strong>: OR-GEN-2024-010</li>
+<li><strong>Insurance Certificate</strong>: INS-CERT-2024-010</li>
+<li><strong>Specialties</strong>: Roofing, Storm Damage Repair, Emergency Services</li>
+<li><strong>Rating</strong>: 4.5</li>
+<li><strong>Preferred</strong>: No</li>
+<li>
+<p><strong>Active</strong>: Yes</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: Johnson Emergency Restoration</li>
+<li><strong>Email</strong>: kimberly.johnson@contractor13.com</li>
+<li><strong>Phone</strong>: 555-6361</li>
+<li><strong>Address</strong>: 2126 Lake View Dr, Salem, OR, 97301, USA</li>
+<li><strong>License Number</strong>: OR-PLB-2024-013</li>
+<li><strong>Insurance Certificate</strong>: INS-CERT-2024-013</li>
+<li><strong>Specialties</strong>: Roofing, Storm Damage Repair, Emergency Services</li>
+<li><strong>Rating</strong>: 4</li>
+<li><strong>Preferred</strong>: No</li>
+<li>
+<p><strong>Active</strong>: Yes</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: Wright Emergency Restoration</li>
+<li><strong>Email</strong>: melissa.wright@contractor21.com</li>
+<li><strong>Phone</strong>: 555-4321</li>
+<li><strong>Address</strong>: 2748 Park Pl, Olympia, WA, 98501, USA</li>
+<li><strong>License Number</strong>: WA-FIR-2024-021</li>
+<li><strong>Insurance Certificate</strong>: INS-CERT-2024-021</li>
+<li><strong>Specialties</strong>: Roofing, Storm Damage Repair, Emergency Services</li>
+<li><strong>Rating</strong>: 3.9</li>
+<li><strong>Preferred</strong>: No</li>
+<li>
+<p><strong>Active</strong>: Yes</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: Jackson General Contractors</li>
+<li><strong>Email</strong>: james.jackson@contractor29.com</li>
+<li><strong>Phone</strong>: 555-3105</li>
+<li><strong>Address</strong>: 777 Washington Blvd, Eugene, OR, 97401, USA</li>
+<li><strong>License Number</strong>: OR-ELC-2024-029</li>
+<li><strong>Insurance Certificate</strong>: INS-CERT-2024-029</li>
+<li><strong>Specialties</strong>: Roofing, Storm Damage Repair, Emergency Services</li>
+<li><strong>Rating</strong>: 4.2</li>
+<li><strong>Preferred</strong>: No</li>
+<li><strong>Active</strong>: Yes</li>
+</ol>
+<p>Would you like more details on any of these contractors?</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should invoke the show-contractors tool with specialty set to 'Roofing' and display the filtered list of roofing contractors available for repair work.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_e1f88_row0_col1, #T_e1f88_row1_col1, #T_e1f88_row2_col1, #T_e1f88_row3_col1, #T_e1f88_row4_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+</style>
+<table id="T_e1f88" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_e1f88_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_e1f88_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_e1f88_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_e1f88_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_e1f88_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_e1f88_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_e1f88_row0_col1" class="data row0 col1" >pass</td>
+      <td id="T_e1f88_row0_col2" class="data row0 col2" >4</td>
+      <td id="T_e1f88_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_e1f88_row0_col4" class="data row0 col4" >The response directly lists multiple roofing contractors with detailed contact and licensing information, fully addressing the query. It provides comprehensive and relevant data, making it a sufficient and complete answer to the request.</td>
+    </tr>
+    <tr>
+      <td id="T_e1f88_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_e1f88_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_e1f88_row1_col2" class="data row1 col2" >4</td>
+      <td id="T_e1f88_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_e1f88_row1_col4" class="data row1 col4" >The response is coherent because it logically and clearly lists roofing contractors with detailed, relevant information, directly addressing the query in an organized and easy-to-follow manner.</td>
+    </tr>
+    <tr>
+      <td id="T_e1f88_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_e1f88_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_e1f88_row2_col2" class="data row2 col2" >5</td>
+      <td id="T_e1f88_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_e1f88_row2_col4" class="data row2 col4" >The RESPONSE fully adheres to the CONTEXT by listing roofing contractors with relevant details, without adding unsupported information or omitting critical points, making it a complete and accurate reflection of the CONTEXT.</td>
+    </tr>
+    <tr>
+      <td id="T_e1f88_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_e1f88_row3_col1" class="data row3 col1" >pass</td>
+      <td id="T_e1f88_row3_col2" class="data row3 col2" >1</td>
+      <td id="T_e1f88_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_e1f88_row3_col4" class="data row3 col4" >Found 1 unique citation(s) : turn1search3</td>
+    </tr>
+    <tr>
+      <td id="T_e1f88_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_e1f88_row4_col1" class="data row4 col1" >pass</td>
+      <td id="T_e1f88_row4_col2" class="data row4 col2" >not applicable</td>
+      <td id="T_e1f88_row4_col3" class="data row4 col3" >3</td>
+      <td id="T_e1f88_row4_col4" class="data row4 col4" >No tool calls found in response or provided tool_calls.</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 3 of 10</em></p>
+<hr>
+<h3>Prompt 4: Who are the available inspectors?</h3>
+<table>
+<tr><th>Response</th><td><p>Here are the available inspectors at Zava Insurance:</p>
+<ol>
+<li>citeturn1search2 — HVAC, Mechanical Systems</li>
+<li>citeturn1search2 — Roofing, Storm Damage</li>
+<li>citeturn1search2 — Fire Damage, Smoke Assessment, Electrical</li>
+<li>citeturn1search2 — HVAC, Mechanical Systems</li>
+<li>citeturn1search2 — Wind Damage, Storm Damage</li>
+<li>citeturn1search2 — Hail Damage, Roof Assessment</li>
+<li>citeturn1search2 — General, Property Assessment</li>
+<li>citeturn1search2 — Fire Damage, Smoke Assessment, Electrical</li>
+<li>citeturn1search2 — Roofing, Storm Damage</li>
+<li>citeturn1search2 — Wind Damage, Storm Damage</li>
+<li>citeturn1search2 — General, Property Assessment</li>
+<li>citeturn1search2 — Mold, Water Damage, Air Quality</li>
+<li>citeturn1search2 — Fire Damage, Smoke Assessment, Electrical</li>
+<li>citeturn1search2 — Fire Damage, Smoke Assessment, Electrical</li>
+<li>citeturn1search2 — Flood Damage, Water Intrusion</li>
+<li>citeturn1search2 — Flood Damage, Water Intrusion</li>
+<li>citeturn1search2 — HVAC, Mechanical Systems</li>
+<li>citeturn1search2 — HVAC, Mechanical Systems</li>
+<li>citeturn1search2 — Water Damage, Plumbing</li>
+<li>citeturn1search2 — Fire Damage, Smoke Assessment, Electrical</li>
+</ol>
+<p>If you need more details or want to schedule an inspection, feel free to ask!</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should invoke the list-inspectors tool and display all available inspectors with their specializations.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_d25c2_row0_col1, #T_d25c2_row1_col1, #T_d25c2_row2_col1, #T_d25c2_row3_col1, #T_d25c2_row4_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+</style>
+<table id="T_d25c2" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_d25c2_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_d25c2_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_d25c2_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_d25c2_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_d25c2_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_d25c2_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_d25c2_row0_col1" class="data row0 col1" >pass</td>
+      <td id="T_d25c2_row0_col2" class="data row0 col2" >4</td>
+      <td id="T_d25c2_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_d25c2_row0_col4" class="data row0 col4" >The response directly lists the available inspectors along with their specialties, fully addressing the query. Although it lacks individual names or contact details, it provides a comprehensive overview of inspector types, which is sufficient to answer who is available.</td>
+    </tr>
+    <tr>
+      <td id="T_d25c2_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_d25c2_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_d25c2_row1_col2" class="data row1 col2" >3</td>
+      <td id="T_d25c2_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_d25c2_row1_col4" class="data row1 col4" >The response is partially coherent because it logically lists inspector specialties and attempts to answer the question, but the use of placeholder text instead of actual inspector names or identifiers makes it difficult to understand who the inspectors are, reducing overall coherence.</td>
+    </tr>
+    <tr>
+      <td id="T_d25c2_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_d25c2_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_d25c2_row2_col2" class="data row2 col2" >5</td>
+      <td id="T_d25c2_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_d25c2_row2_col4" class="data row2 col4" >The RESPONSE accurately and thoroughly conveys the essential information requested in the CONTEXT without adding unsupported details or omitting critical points.</td>
+    </tr>
+    <tr>
+      <td id="T_d25c2_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_d25c2_row3_col1" class="data row3 col1" >pass</td>
+      <td id="T_d25c2_row3_col2" class="data row3 col2" >1</td>
+      <td id="T_d25c2_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_d25c2_row3_col4" class="data row3 col4" >Found 1 unique citation(s) : turn1search2</td>
+    </tr>
+    <tr>
+      <td id="T_d25c2_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_d25c2_row4_col1" class="data row4 col1" >pass</td>
+      <td id="T_d25c2_row4_col2" class="data row4 col2" >not applicable</td>
+      <td id="T_d25c2_row4_col3" class="data row4 col3" >3</td>
+      <td id="T_d25c2_row4_col4" class="data row4 col4" >No tool calls found in response or provided tool_calls.</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 4 of 10</em></p>
+<hr>
+<h3>Prompt 5: Give me a quick summary of claim CN202504991</h3>
+<table>
+<tr><th>Response</th><td><p>Here is a quick summary of claim <strong>CN202504991</strong>:</p>
+<ul>
+<li><strong>Policy Holder</strong>: policyholder2@email.com</li>
+<li><strong>Property</strong>: 259 Valley Rd, Vancouver, WA 98660</li>
+<li><strong>Date of Loss</strong>: 12/8/2025</li>
+<li><strong>Estimated Loss</strong>: \$29,794</li>
+<li><strong>Status</strong>: Open - Under Investigation</li>
+<li><strong>Damage Types</strong>: Vandalism (severe severity), Property damage</li>
+<li><strong>Inspections</strong>: 0</li>
+<li><strong>Purchase Orders</strong>: 0</li>
+<li><strong>Description</strong>: Vandalism to property requiring assessment and repair</li>
+</ul>
+<p>If you need more details or further assistance, feel free to ask!</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should invoke the get-claim-summary tool with claimId set to 'CN202504991' and return a concise text summary of the claim's key details.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_88213_row0_col1, #T_88213_row1_col1, #T_88213_row2_col1, #T_88213_row4_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+#T_88213_row3_col1 {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+</style>
+<table id="T_88213" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_88213_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_88213_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_88213_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_88213_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_88213_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_88213_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_88213_row0_col1" class="data row0 col1" >pass</td>
+      <td id="T_88213_row0_col2" class="data row0 col2" >4</td>
+      <td id="T_88213_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_88213_row0_col4" class="data row0 col4" >The response directly summarizes claim CN202504991 with detailed, relevant information including policy holder, property, loss date, estimated loss, status, damage types, and description, fully addressing the query with sufficient detail.</td>
+    </tr>
+    <tr>
+      <td id="T_88213_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_88213_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_88213_row1_col2" class="data row1 col2" >5</td>
+      <td id="T_88213_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_88213_row1_col4" class="data row1 col4" >The response is coherent because it logically and clearly presents the requested summary in an organized manner, making it easy to understand and follow. It fully addresses the query with well-structured information and appropriate transitions.</td>
+    </tr>
+    <tr>
+      <td id="T_88213_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_88213_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_88213_row2_col2" class="data row2 col2" >5</td>
+      <td id="T_88213_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_88213_row2_col4" class="data row2 col4" >The response is fully grounded and complete as it accurately and thoroughly conveys all essential information about the claim CN202504991 without adding unsupported details or omitting critical points.</td>
+    </tr>
+    <tr>
+      <td id="T_88213_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_88213_row3_col1" class="data row3 col1" >fail</td>
+      <td id="T_88213_row3_col2" class="data row3 col2" >0</td>
+      <td id="T_88213_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_88213_row3_col4" class="data row3 col4" >Found 0 unique citation(s) : None</td>
+    </tr>
+    <tr>
+      <td id="T_88213_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_88213_row4_col1" class="data row4 col1" >pass</td>
+      <td id="T_88213_row4_col2" class="data row4 col2" >not applicable</td>
+      <td id="T_88213_row4_col3" class="data row4 col3" >3</td>
+      <td id="T_88213_row4_col4" class="data row4 col4" >No tool calls found in response or provided tool_calls.</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 5 of 10</em></p>
+<hr>
+<h3>Prompt 6: Create a high-priority initial inspection for claim CN202504993 scheduled for next Monday</h3>
+<table>
+<tr><th>Response</th><td><p>The high-priority initial inspection for claim <strong>CN202504993</strong> has been successfully created and scheduled for next Monday, April 20, 2026. The inspection ID is <strong>insp-045</strong> and its status is currently openciteturn1search2.</p>
+<p>Is there anything else you need assistance with?</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should invoke the create-inspection tool with claimNumber 'CN202504993', taskType 'initial', priority 'high', and a scheduledDate corresponding to next Monday. It should confirm the inspection was created.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_3ba44_row0_col1, #T_3ba44_row1_col1, #T_3ba44_row2_col1, #T_3ba44_row3_col1, #T_3ba44_row4_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+</style>
+<table id="T_3ba44" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_3ba44_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_3ba44_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_3ba44_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_3ba44_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_3ba44_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_3ba44_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_3ba44_row0_col1" class="data row0 col1" >pass</td>
+      <td id="T_3ba44_row0_col2" class="data row0 col2" >4</td>
+      <td id="T_3ba44_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_3ba44_row0_col4" class="data row0 col4" >The response directly confirms the creation and scheduling of the high-priority initial inspection for claim CN202504993 on the requested date, providing specific details like inspection ID and status, fully addressing the query.</td>
+    </tr>
+    <tr>
+      <td id="T_3ba44_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_3ba44_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_3ba44_row1_col2" class="data row1 col2" >4</td>
+      <td id="T_3ba44_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_3ba44_row1_col4" class="data row1 col4" >The response is coherent because it logically and clearly addresses the query with relevant details, proper sequencing, and smooth flow, making it easy to follow and understand.</td>
+    </tr>
+    <tr>
+      <td id="T_3ba44_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_3ba44_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_3ba44_row2_col2" class="data row2 col2" >3</td>
+      <td id="T_3ba44_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_3ba44_row2_col4" class="data row2 col4" >The RESPONSE is accurate and confirms all required details from the CONTEXT but introduces unsupported information (inspection ID and status), so it is not fully grounded.</td>
+    </tr>
+    <tr>
+      <td id="T_3ba44_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_3ba44_row3_col1" class="data row3 col1" >pass</td>
+      <td id="T_3ba44_row3_col2" class="data row3 col2" >1</td>
+      <td id="T_3ba44_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_3ba44_row3_col4" class="data row3 col4" >Found 1 unique citation(s) : turn1search2</td>
+    </tr>
+    <tr>
+      <td id="T_3ba44_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_3ba44_row4_col1" class="data row4 col1" >pass</td>
+      <td id="T_3ba44_row4_col2" class="data row4 col2" >not applicable</td>
+      <td id="T_3ba44_row4_col3" class="data row4 col3" >3</td>
+      <td id="T_3ba44_row4_col4" class="data row4 col4" >No tool calls found in response or provided tool_calls.</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 6 of 10</em></p>
+<hr>
+<h3>Prompt 7: Show me only our preferred contractors</h3>
+<table>
+<tr><th>Response</th><td><p>Here are the preferred contractors available:</p>
+<ol>
+<li><strong>citeturn1search3</strong></li>
+<li><strong>Business Name</strong>: Thompson Roofing Solutions</li>
+<li><strong>Email</strong>: mike@thompsonroofing.com</li>
+<li><strong>Phone</strong>: 555-0789</li>
+<li><strong>Address</strong>: 456 Industrial Ave, Seattle, WA 98102, USA</li>
+<li><strong>Specialties</strong>: Roofing, Storm Damage Repair, Emergency Services</li>
+<li>
+<p><strong>Rating</strong>: 4.8</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: Pacific Water Restoration</li>
+<li><strong>Email</strong>: lisa@pacificwater.com</li>
+<li><strong>Phone</strong>: 555-0234</li>
+<li><strong>Address</strong>: 789 Commerce St, Portland, OR 97205, USA</li>
+<li><strong>Specialties</strong>: Water Damage Restoration, Mold Remediation, Flood Cleanup</li>
+<li>
+<p><strong>Rating</strong>: 4.9</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: Wilson General Contractors</li>
+<li><strong>Email</strong>: rob@wilsoncontractors.com</li>
+<li><strong>Phone</strong>: 555-0567</li>
+<li><strong>Address</strong>: 321 Builder Blvd, Spokane, WA 99201, USA</li>
+<li><strong>Specialties</strong>: General Contracting, Structural Repair, Renovation</li>
+<li>
+<p><strong>Rating</strong>: 4.6</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: Jones Building Services</li>
+<li><strong>Email</strong>: kimberly.jones@contractor7.com</li>
+<li><strong>Phone</strong>: 555-6574</li>
+<li><strong>Address</strong>: 6001 Cedar Ln, Seattle, WA 98101, USA</li>
+<li><strong>Specialties</strong>: Emergency Services, 24/7 Response, Disaster Recovery</li>
+<li>
+<p><strong>Rating</strong>: 4.0</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: Anderson Damage Repair Inc</li>
+<li><strong>Email</strong>: michael.anderson@contractor8.com</li>
+<li><strong>Phone</strong>: 555-7740</li>
+<li><strong>Address</strong>: 9422 Park Pl, Portland, OR 97201, USA</li>
+<li><strong>Specialties</strong>: Foundation Repair, Structural Engineering, Waterproofing</li>
+<li>
+<p><strong>Rating</strong>: 3.9</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: Smith General Contractors</li>
+<li><strong>Email</strong>: john.smith@contractor9.com</li>
+<li><strong>Phone</strong>: 555-2162</li>
+<li><strong>Address</strong>: 891 Maple Dr, Tacoma, WA 98401, USA</li>
+<li><strong>Specialties</strong>: Fire Damage Restoration, Smoke Cleanup, Odor Removal</li>
+<li>
+<p><strong>Rating</strong>: 4.0</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: King Damage Repair Inc</li>
+<li><strong>Email</strong>: daniel.king@contractor11.com</li>
+<li><strong>Phone</strong>: 555-7505</li>
+<li><strong>Address</strong>: 8786 Washington Blvd, Eugene, OR 97401, USA</li>
+<li><strong>Specialties</strong>: Electrical Services, Wiring Repair, System Upgrades</li>
+<li>
+<p><strong>Rating</strong>: 3.8</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: Young Repair Specialists</li>
+<li><strong>Email</strong>: sarah.young@contractor14.com</li>
+<li><strong>Phone</strong>: 555-9171</li>
+<li><strong>Address</strong>: 221 Oak Ave, Olympia, WA 98501, USA</li>
+<li><strong>Specialties</strong>: Exterior Siding, Window Replacement, Door Installation</li>
+<li>
+<p><strong>Rating</strong>: 4.0</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+</li>
+<li><strong>Business Name</strong>: Miller Restoration Services</li>
+<li><strong>Email</strong>: rebecca.miller@contractor16.com</li>
+<li><strong>Phone</strong>: 555-1234</li>
+<li><strong>Address</strong>: 511 Washington Blvd, Portland, OR 97201, USA</li>
+<li><strong>Specialties</strong>: Exterior Siding, Window Replacement, Door Installation</li>
+<li>
+<p><strong>Rating</strong>: 3.5</p>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+<ul>
+<li><strong>Business Name</strong>: Anderson Damage Repair Inc</li>
+<li><strong>Email</strong>: james.anderson@contractor19.com</li>
+<li><strong>Phone</strong>: 555-2216</li>
+<li><strong>Address</strong>: 3692 Elm St, Tacoma, WA 98401, USA</li>
+<li><strong>Specialties</strong>: Plumbing Services, Pipe Repair, Water Line Installation</li>
+<li><strong>Rating</strong>: 3.7</li>
+</ul>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+<ul>
+<li><strong>Business Name</strong>: Allen Damage Repair Inc</li>
+<li><strong>Email</strong>: mark.allen@contractor20.com</li>
+<li><strong>Phone</strong>: 555-9532</li>
+<li><strong>Address</strong>: 2770 Maple Dr, Bend, OR 97701, USA</li>
+<li><strong>Specialties</strong>: Emergency Services, 24/7 Response, Disaster Recovery</li>
+<li><strong>Rating</strong>: 4.6</li>
+</ul>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+<ul>
+<li><strong>Business Name</strong>: Lewis Emergency Restoration</li>
+<li><strong>Email</strong>: kimberly.lewis@contractor27.com</li>
+<li><strong>Phone</strong>: 555-5798</li>
+<li><strong>Address</strong>: 2377 Valley Rd, Salem, OR 97301, USA</li>
+<li><strong>Specialties</strong>: Emergency Services, 24/7 Response, Disaster Recovery</li>
+<li><strong>Rating</strong>: 4.4</li>
+</ul>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+<ul>
+<li><strong>Business Name</strong>: Wilson Construction Co</li>
+<li><strong>Email</strong>: john.wilson@contractor28.com</li>
+<li><strong>Phone</strong>: 555-3657</li>
+<li><strong>Address</strong>: 2597 Forest Ave, Bellevue, WA 98004, USA</li>
+<li><strong>Specialties</strong>: Water Damage Restoration, Mold Remediation, Flood Cleanup</li>
+<li><strong>Rating</strong>: 3.7</li>
+</ul>
+</li>
+<li>
+<p><strong>citeturn1search3</strong></p>
+<ul>
+<li><strong>Business Name</strong>: Lewis General Contractors</li>
+<li><strong>Email</strong>: robert.lewis@contractor30.com</li>
+<li><strong>Phone</strong>: 555-6414</li>
+<li><strong>Address</strong>: 3212 Park Pl, Spokane, WA 99201, USA</li>
+<li><strong>Specialties</strong>: HVAC Services, Mechanical Repair, System Installation</li>
+<li><strong>Rating</strong>: 4.0</li>
+</ul>
+</li>
+</ol>
+<p>If you need more details about any specific contractor, feel free to ask!</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should invoke the show-contractors tool with preferredOnly set to true and display only the preferred contractors.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_4b955_row0_col1, #T_4b955_row1_col1, #T_4b955_row2_col1, #T_4b955_row3_col1, #T_4b955_row4_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+</style>
+<table id="T_4b955" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_4b955_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_4b955_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_4b955_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_4b955_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_4b955_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_4b955_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_4b955_row0_col1" class="data row0 col1" >pass</td>
+      <td id="T_4b955_row0_col2" class="data row0 col2" >5</td>
+      <td id="T_4b955_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_4b955_row0_col4" class="data row0 col4" >The response directly lists preferred contractors as requested, providing detailed contact and specialty information for each. It fully satisfies the query by focusing exclusively on preferred contractors without extraneous data.</td>
+    </tr>
+    <tr>
+      <td id="T_4b955_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_4b955_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_4b955_row1_col2" class="data row1 col2" >4</td>
+      <td id="T_4b955_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_4b955_row1_col4" class="data row1 col4" >The response is coherent because it logically and clearly presents the requested information in an organized manner, making it easy to follow and directly addressing the query.</td>
+    </tr>
+    <tr>
+      <td id="T_4b955_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_4b955_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_4b955_row2_col2" class="data row2 col2" >5</td>
+      <td id="T_4b955_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_4b955_row2_col4" class="data row2 col4" >The RESPONSE fully adheres to the CONTEXT by listing only preferred contractors as instructed, providing detailed and relevant information without adding unsupported details or omitting critical points.</td>
+    </tr>
+    <tr>
+      <td id="T_4b955_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_4b955_row3_col1" class="data row3 col1" >pass</td>
+      <td id="T_4b955_row3_col2" class="data row3 col2" >1</td>
+      <td id="T_4b955_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_4b955_row3_col4" class="data row3 col4" >Found 1 unique citation(s) : turn1search3</td>
+    </tr>
+    <tr>
+      <td id="T_4b955_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_4b955_row4_col1" class="data row4 col1" >pass</td>
+      <td id="T_4b955_row4_col2" class="data row4 col2" >not applicable</td>
+      <td id="T_4b955_row4_col3" class="data row4 col3" >3</td>
+      <td id="T_4b955_row4_col4" class="data row4 col4" >No tool calls found in response or provided tool_calls.</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 7 of 10</em></p>
+<hr>
+<h3>Prompt 8: What is the company's vacation policy for employees?</h3>
+<table>
+<tr><th>Response</th><td><p>It appears there are no specific files related to the vacation policy for employees at Microsoft in the enterprise search results.</p>
+<p>For detailed information on the company's vacation policy, I recommend checking the official Microsoft HR portal or contacting your HR department directly.</p>
+<p>Is there anything else I can assist you with?</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should decline this request, explaining that it is a claims management assistant and cannot answer HR or general company policy questions. It should redirect the user to appropriate resources.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_27a9c_row0_col1, #T_27a9c_row3_col1, #T_27a9c_row4_col1 {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+#T_27a9c_row1_col1, #T_27a9c_row2_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+</style>
+<table id="T_27a9c" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_27a9c_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_27a9c_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_27a9c_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_27a9c_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_27a9c_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_27a9c_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_27a9c_row0_col1" class="data row0 col1" >fail</td>
+      <td id="T_27a9c_row0_col2" class="data row0 col2" >2</td>
+      <td id="T_27a9c_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_27a9c_row0_col4" class="data row0 col4" >The response acknowledges the query but does not provide any details about the vacation policy itself. It only suggests where to find the information, making it related but unhelpful and superficial.</td>
+    </tr>
+    <tr>
+      <td id="T_27a9c_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_27a9c_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_27a9c_row1_col2" class="data row1 col2" >4</td>
+      <td id="T_27a9c_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_27a9c_row1_col4" class="data row1 col4" >The response is coherent because it logically addresses the query, provides relevant information, and guides the user on what to do next in a clear and organized manner.</td>
+    </tr>
+    <tr>
+      <td id="T_27a9c_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_27a9c_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_27a9c_row2_col2" class="data row2 col2" >4</td>
+      <td id="T_27a9c_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_27a9c_row2_col4" class="data row2 col4" >The response partially aligns with the context by redirecting the user to appropriate resources but omits the critical explanation that the agent is a claims management assistant and cannot answer HR or general company policy questions, making it an incomplete response missing essential details.</td>
+    </tr>
+    <tr>
+      <td id="T_27a9c_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_27a9c_row3_col1" class="data row3 col1" >fail</td>
+      <td id="T_27a9c_row3_col2" class="data row3 col2" >0</td>
+      <td id="T_27a9c_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_27a9c_row3_col4" class="data row3 col4" >Found 0 unique citation(s) : None</td>
+    </tr>
+    <tr>
+      <td id="T_27a9c_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_27a9c_row4_col1" class="data row4 col1" >fail</td>
+      <td id="T_27a9c_row4_col2" class="data row4 col2" >2</td>
+      <td id="T_27a9c_row4_col3" class="data row4 col3" >3</td>
+      <td id="T_27a9c_row4_col4" class="data row4 col4" >Let's think step by step: The user asked about the company's vacation policy for employees. The agent called the tool 'search_enterprise_files' with the argument 'vacation policy for employees at Microsoft'. This tool call is relevant to the user's query as it attempts to find the vacation policy within enterprise files. The parameter is appropriate and grounded in the user's query, assuming the company is Microsoft or the context is about Microsoft. However, the tool returned an empty result, meaning no useful information was retrieved. There is only one tool call, so no excess calls were made. Since the tool returned no results, the agent was unable to provide a final output addressing the user's query. Therefore, although the tool call was relevant and correct in parameters, the lack of results means the agent did not reach a final output. According to the definitions, this corresponds to a Level 2 fail because the tool call was relevant but did not lead to a correct output.</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 8 of 10</em></p>
+<hr>
+<h3>Prompt 9: Can you send an email to the adjuster assigned to claim CN202504999?</h3>
+<table>
+<tr><th>Response</th><td><p>The adjuster assigned to claim citeturn1search3 is:</p>
+<ul>
+<li><strong>Name</strong>: citeturn1search3</li>
+<li><strong>Email</strong>: citeturn1search3</li>
+<li><strong>Phone</strong>: 555-4462</li>
+</ul>
+<p>Please let me know if you need any further assistance with this claim!</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should explain that it cannot send emails. It may offer to look up the claim details so the user can identify the assigned adjuster, but it should not claim to have email-sending capability.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_0c8d4_row0_col1, #T_0c8d4_row1_col1, #T_0c8d4_row2_col1, #T_0c8d4_row3_col1, #T_0c8d4_row4_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+</style>
+<table id="T_0c8d4" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_0c8d4_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_0c8d4_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_0c8d4_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_0c8d4_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_0c8d4_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_0c8d4_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_0c8d4_row0_col1" class="data row0 col1" >pass</td>
+      <td id="T_0c8d4_row0_col2" class="data row0 col2" >3</td>
+      <td id="T_0c8d4_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_0c8d4_row0_col4" class="data row0 col4" >The response attempts to provide the adjuster's contact details for the specified claim but uses placeholder text instead of actual information, making it incomplete and unhelpful for contacting the adjuster.</td>
+    </tr>
+    <tr>
+      <td id="T_0c8d4_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_0c8d4_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_0c8d4_row1_col2" class="data row1 col2" >3</td>
+      <td id="T_0c8d4_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_0c8d4_row1_col4" class="data row1 col4" >The response is partially coherent because it attempts to provide the requested information in an organized manner but fails due to placeholder text that disrupts clarity and logical flow, making it hard to follow or use effectively.</td>
+    </tr>
+    <tr>
+      <td id="T_0c8d4_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_0c8d4_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_0c8d4_row2_col2" class="data row2 col2" >5</td>
+      <td id="T_0c8d4_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_0c8d4_row2_col4" class="data row2 col4" >The RESPONSE accurately follows the CONTEXT by providing adjuster contact details without claiming email-sending capability, fulfilling the requirement completely and without unsupported additions or omissions.</td>
+    </tr>
+    <tr>
+      <td id="T_0c8d4_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_0c8d4_row3_col1" class="data row3 col1" >pass</td>
+      <td id="T_0c8d4_row3_col2" class="data row3 col2" >1</td>
+      <td id="T_0c8d4_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_0c8d4_row3_col4" class="data row3 col4" >Found 1 unique citation(s) : turn1search3</td>
+    </tr>
+    <tr>
+      <td id="T_0c8d4_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_0c8d4_row4_col1" class="data row4 col1" >pass</td>
+      <td id="T_0c8d4_row4_col2" class="data row4 col2" >not applicable</td>
+      <td id="T_0c8d4_row4_col3" class="data row4 col3" >3</td>
+      <td id="T_0c8d4_row4_col4" class="data row4 col4" >No tool calls found in response or provided tool_calls.</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 9 of 10</em></p>
+<hr>
+<h3>Prompt 10: Show me all denied claims and then give me the details on the first one</h3>
+<table>
+<tr><th>Response</th><td><p>Here are the details for the first denied claim:</p>
+<h3>Claim Information</h3>
+<ul>
+<li><strong>Claim Number</strong>: citeturn1search4</li>
+<li><strong>Policy Holder</strong>: citeturn1search4</li>
+<li><strong>Policy Number</strong>: POL-HO-2025-001</li>
+<li><strong>Property Address</strong>: 9901 Valley Rd, Spokane, WA 99201</li>
+<li><strong>Date of Loss</strong>: August 1, 2025</li>
+<li><strong>Date Reported</strong>: August 2, 2025</li>
+<li><strong>Status</strong>: Denied</li>
+<li><strong>Damage Types</strong>: Fire damage (severe severity), Smoke damage</li>
+<li><strong>Description</strong>: Fire damage to property requiring assessment and repair</li>
+<li><strong>Estimated Loss</strong>: \$23,391</li>
+<li><strong>Adjuster Assigned</strong>: adj-007</li>
+<li><strong>Notes</strong>: </li>
+<li>Awaiting documentation</li>
+<li>Urgent priority</li>
+<li>Claim approved per request</li>
+</ul>
+<h3>Inspections</h3>
+<ol>
+<li><strong>Initial Inspection</strong></li>
+<li><strong>Inspection ID</strong>: insp-001</li>
+<li><strong>Inspector</strong>: citeturn1search5</li>
+<li><strong>Scheduled Date</strong>: August 3, 2025</li>
+<li><strong>Status</strong>: Completed</li>
+<li><strong>Findings</strong>: Roof damage is consistent with the claim report.</li>
+<li><strong>Recommended Actions</strong>: Recommend full roof replacement.</li>
+<li>
+<p><strong>Photos</strong>: <img alt="Inspection Photo" src="https://github.com/rabwill/zava-assets/blob/main/IMG-01.png?raw=true" /></p>
+</li>
+<li>
+<p><strong>Re-inspection</strong></p>
+</li>
+<li><strong>Inspection ID</strong>: insp-002</li>
+<li><strong>Inspector</strong>: citeturn1search5</li>
+<li><strong>Scheduled Date</strong>: August 9, 2025</li>
+<li><strong>Status</strong>: Completed</li>
+<li><strong>Findings</strong>: Roof damage confirmed, replacement needed.</li>
+<li><strong>Recommended Actions</strong>: Full replacement recommended, Obtain multiple quotes.</li>
+<li><strong>Photos</strong>: <img alt="Inspection Photo" src="https://github.com/rabwill/zava-assets/blob/main/IMG-02.png?raw=true" /></li>
+</ol>
+<h3>Purchase Orders</h3>
+<ol>
+<li><strong>Purchase Order</strong></li>
+<li><strong>PO Number</strong>: PO-2025-001</li>
+<li><strong>Contractor</strong>: citeturn1search5</li>
+<li><strong>Work Description</strong>: Fire damage - severe severity repair and restoration services</li>
+<li><strong>Line Items</strong>:<ul>
+<li>Water damage restoration: \$3,006</li>
+<li>Labor and installation services: \$4,410</li>
+<li>Labor and installation services: \$3,240</li>
+<li>Emergency repair services: \$3,298</li>
+</ul>
+</li>
+<li><strong>Subtotal</strong>: \$13,954</li>
+<li><strong>Tax</strong>: \$1,255.86</li>
+<li><strong>Total</strong>: \$15,209.86</li>
+<li><strong>Status</strong>: Pending</li>
+<li><strong>Notes</strong>: Work to begin immediately upon approval</li>
+</ol>
+<p>If you need more details or assistance with another claim, feel free to ask!</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should first invoke show-claims-dashboard with status 'Denied' to display denied claims, and then invoke show-claim-detail for the first denied claim to provide its full details. The response should address both parts of the request.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_0f307_row0_col1, #T_0f307_row1_col1, #T_0f307_row2_col1, #T_0f307_row3_col1, #T_0f307_row4_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+</style>
+<table id="T_0f307" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_0f307_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_0f307_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_0f307_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_0f307_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_0f307_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_0f307_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_0f307_row0_col1" class="data row0 col1" >pass</td>
+      <td id="T_0f307_row0_col2" class="data row0 col2" >3</td>
+      <td id="T_0f307_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_0f307_row0_col4" class="data row0 col4" >The response provides detailed information on the first denied claim, including claim details, inspections, and purchase orders, but it does not list all denied claims as requested. It partially fulfills the query but omits the initial list of all denied claims.</td>
+    </tr>
+    <tr>
+      <td id="T_0f307_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_0f307_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_0f307_row1_col2" class="data row1 col2" >4</td>
+      <td id="T_0f307_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_0f307_row1_col4" class="data row1 col4" >The response is coherent in presenting detailed information about the first denied claim in a logical and organized way, but it does not address the first part of the query (showing all denied claims). Despite this partial fulfillment, the internal coherence of the response is strong.</td>
+    </tr>
+    <tr>
+      <td id="T_0f307_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_0f307_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_0f307_row2_col2" class="data row2 col2" >4</td>
+      <td id="T_0f307_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_0f307_row2_col4" class="data row2 col4" >The response accurately provides the full details of the first denied claim as required but omits the initial step of invoking show-claims-dashboard with status 'Denied' to display denied claims. This omission means the response is incomplete and missing a critical detail from the CONTEXT.</td>
+    </tr>
+    <tr>
+      <td id="T_0f307_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_0f307_row3_col1" class="data row3 col1" >pass</td>
+      <td id="T_0f307_row3_col2" class="data row3 col2" >2</td>
+      <td id="T_0f307_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_0f307_row3_col4" class="data row3 col4" >Found 2 unique citation(s) : turn1search5, turn1search4</td>
+    </tr>
+    <tr>
+      <td id="T_0f307_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_0f307_row4_col1" class="data row4 col1" >pass</td>
+      <td id="T_0f307_row4_col2" class="data row4 col2" >not applicable</td>
+      <td id="T_0f307_row4_col3" class="data row4 col3" >3</td>
+      <td id="T_0f307_row4_col4" class="data row4 col4" >No tool calls found in response or provided tool_calls.</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 10 of 10</em></p>
+</div>
+</body></html>
+<p><small>Generated by M365 Copilot Agents Evaluation CLI.</small></p>

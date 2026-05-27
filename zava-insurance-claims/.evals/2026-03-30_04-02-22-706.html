@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M365 Copilot Agents Evaluation Scores Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; padding: 1.5em; background: #fafafa; }
+        h1 { margin-top: 0; color: #2c3e50; }
+        h2 { color: #34495e; margin-top: 2em; }
+        table { border-collapse: collapse; width: 100%; margin: 1.5em 0; }
+        th, td { border: 1px solid #ccc; padding: 10px 12px; text-align: left; vertical-align: top; }
+        th { background: #f4f4f4; font-weight: 600; }
+        details { padding: 0.75em 1em; border: 1px solid #ddd; border-radius: 6px; background: #fff; }
+        details summary { cursor: pointer; font-weight: 600; margin: -0.75em -1em 0.75em; padding: 0.75em 1em; background: #eef2f5; border-bottom: 1px solid #ddd; }
+        .pass { background: #d4edda; color: #155724; }
+        .fail { background: #f8d7da; color: #721c24; }
+        .score-details { font-size: 0.95em; color: #333; background: #f9f9f9; }
+        .score-details table { margin-top: 0.5em !important; }
+        .score-details th { background: #e9ecef; }
+        .aggregate-section { margin: 2em 0; }
+        .aggregate-section h2 { color: #34495e; margin-top: 0; }
+        .pass-rate-excellent { background: #d1f2eb; color: #186a3b; font-weight: bold; }
+        .pass-rate-good { background: #fef9e7; color: #7d6608; font-weight: bold; }
+        .pass-rate-poor { background: #fadbd8; color: #b03a2e; font-weight: bold; }
+        .individual-results { margin-top: 3em; }
+    </style>
+</head>
+<body>
+    <h1> M365 Copilot Agents Evaluation Report</h1>
+<div class="aggregate-section">
+<h2> Aggregate Statistics (4 prompts evaluated)</h2>
+<table>
+<tr><th>Metric</th><th>Pass Rate</th><th>Passed</th><th>Failed</th><th>Avg Score</th><th>Threshold</th></tr>
+
+                <tr>
+                    <td><strong>Relevance</strong></td>
+                    <td class="pass-rate-excellent">100.0%</td>
+                    <td class="pass">4</td>
+                    <td class="fail">0</td>
+                    <td>4.50</td>
+                    <td>3</td>
+                </tr>
+                
+
+                <tr>
+                    <td><strong>Coherence</strong></td>
+                    <td class="pass-rate-excellent">100.0%</td>
+                    <td class="pass">4</td>
+                    <td class="fail">0</td>
+                    <td>4.50</td>
+                    <td>3</td>
+                </tr>
+                
+
+                <tr>
+                    <td><strong>Groundedness</strong></td>
+                    <td class="pass-rate-excellent">100.0%</td>
+                    <td class="pass">4</td>
+                    <td class="fail">0</td>
+                    <td>5.00</td>
+                    <td>3</td>
+                </tr>
+                
+
+                <tr>
+                    <td><strong>Citations</strong></td>
+                    <td class="pass-rate-poor">50.0%</td>
+                    <td class="pass">2</td>
+                    <td class="fail">2</td>
+                    <td>0.50</td>
+                    <td>1</td>
+                </tr>
+                
+
+                <tr>
+                    <td><strong>Tool Call Accuracy</strong></td>
+                    <td class="pass-rate-excellent">100.0%</td>
+                    <td class="pass">1</td>
+                    <td class="fail">0</td>
+                    <td>5.00</td>
+                    <td>3</td>
+                </tr>
+                
+</table>
+</div>
+<div class="individual-results">
+<h2> Individual Results</h2>
+<h3>Prompt 1: What does our claims documentation say about the approval process for insurance claims?</h3>
+<table>
+<tr><th>Response</th><td><p>Here’s what <strong>our claims documentation explicitly says</strong> about the <strong>insurance claim approval process</strong>, based on the authoritative SharePoint document <strong><File>2026-03-25-zava-claims-insurance-policy-guidebook.docx</File></strong>. I’m only summarizing what is directly stated in the document—no inferred steps or implied governance. citeturn1search1</p>
+<hr />
+<h2>Claim Approval Process (As Documented)</h2>
+<h3>1. <strong>Investigation Phase (Pre‑Approval)</strong></h3>
+<p>After a claim is filed and acknowledged, it moves through a formal investigation period. The documentation states that this phase includes:
+- Evidence gathering
+- Inspections (if applicable)
+- Statements
+- Documentation review  </p>
+<p>The stated target duration for investigation is <strong>5–15 business days</strong>. citeturn1search1</p>
+<hr />
+<h3>2. <strong>Coverage Determination (Approval Decision Point)</strong></h3>
+<p>The <strong>approval or denial decision</strong> occurs at the <strong>coverage determination</strong> stage. The guidebook states:
+- A <strong>written coverage decision</strong> is issued after the investigation is complete.
+- The target timing is <strong>within 5 business days of investigation completion</strong>.</p>
+<p>This written coverage decision is the formal approval (or denial) of the claim. citeturn1search1</p>
+<hr />
+<h3>3. <strong>Payment Issuance (Post‑Approval)</strong></h3>
+<p>If the claim is <strong>approved</strong>, payment is handled as a separate step:
+- Payment is issued <strong>within 10 business days of the coverage determination</strong>.
+- Payment method depends on claim type and circumstances and may include:
+  - Direct deposit (ACH)
+  - Check by mail
+  - Mortgage company joint check (for certain dwelling claims)
+  - Vendor direct pay to approved contractors  </p>
+<p>Payment timing and methods are explicitly described as occurring <strong>after approval</strong>, not as part of the approval decision itself. citeturn1search1</p>
+<hr />
+<h3>4. <strong>Decision Transparency Requirements</strong></h3>
+<p>For <strong>denied claims</strong>, the document states policyholders have the right to:
+- Receive a <strong>written explanation</strong> of the denial
+- See the <strong>specific policy provisions</strong> relied upon for the decision  </p>
+<p>This reinforces that approvals and denials must be documented and communicated formally. citeturn1search1</p>
+<hr />
+<h2>What the Documentation Does <strong>Not</strong> Specify</h2>
+<p>The guidebook <strong>does not explicitly document</strong>:
+- Approval authority levels (e.g., adjuster vs. supervisor vs. leadership)
+- Dollar thresholds requiring additional approval
+- Internal escalation or review checkpoints before issuing a coverage decision
+- Tooling or system workflows used to record approvals</p>
+<p>Since these items are not stated in the source, I’m intentionally not inferring them. citeturn1search1</p>
+<hr />
+<h2>Source Reference</h2>
+<ul>
+<li><strong>Document</strong>: <File>2026-03-25-zava-claims-insurance-policy-guidebook.docx</File>  </li>
+<li><strong>Section</strong>: Claims Process (Section 8), Policyholder Rights (Section 12)  </li>
+<li><strong>Location</strong>: Zava Claims SharePoint<br />
+citeturn1search1</li>
+</ul>
+<hr />
+<p>If you want, I can:
+- Pull <strong>exact quoted language</strong> for the coverage determination section<br />
+- Check whether there’s a <strong>separate internal SOP or claims operations doc</strong> that defines approval authorities or thresholds<br />
+- Compare this approval model to <strong>appeals or catastrophe claim handling</strong>, which <em>are</em> documented differently  </p>
+<p>Just tell me which direction is most useful.</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should retrieve information about the claims approval process from the ZavaClaims SharePoint Shared Documents library, accurately describe the approval steps and criteria, and cite the source document.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_1ef05_row0_col1, #T_1ef05_row1_col1, #T_1ef05_row2_col1, #T_1ef05_row3_col1, #T_1ef05_row4_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+</style>
+<table id="T_1ef05" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_1ef05_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_1ef05_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_1ef05_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_1ef05_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_1ef05_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_1ef05_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_1ef05_row0_col1" class="data row0 col1" >pass</td>
+      <td id="T_1ef05_row0_col2" class="data row0 col2" >5</td>
+      <td id="T_1ef05_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_1ef05_row0_col4" class="data row0 col4" >The response directly and comprehensively summarizes the claims documentation's approval process, detailing investigation, decision, payment, and transparency steps, while noting what is not specified. It fully addresses the query with clear, sourced information.</td>
+    </tr>
+    <tr>
+      <td id="T_1ef05_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_1ef05_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_1ef05_row1_col2" class="data row1 col2" >5</td>
+      <td id="T_1ef05_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_1ef05_row1_col4" class="data row1 col4" >The response is well-organized and logically structured, with clear connections between sections and a smooth flow that directly addresses the query about the claims approval process. It uses appropriate transitions and clearly separates different stages, making it easy to understand.</td>
+    </tr>
+    <tr>
+      <td id="T_1ef05_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_1ef05_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_1ef05_row2_col2" class="data row2 col2" >5</td>
+      <td id="T_1ef05_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_1ef05_row2_col4" class="data row2 col4" >The response is fully grounded and complete, accurately reflecting all essential information from the context without adding unsupported details or omitting critical points. It cites the source document and clarifies exclusions, meeting the highest standard of groundedness.</td>
+    </tr>
+    <tr>
+      <td id="T_1ef05_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_1ef05_row3_col1" class="data row3 col1" >pass</td>
+      <td id="T_1ef05_row3_col2" class="data row3 col2" >1</td>
+      <td id="T_1ef05_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_1ef05_row3_col4" class="data row3 col4" >Found 1 unique citation(s) : turn1search1</td>
+    </tr>
+    <tr>
+      <td id="T_1ef05_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_1ef05_row4_col1" class="data row4 col1" >pass</td>
+      <td id="T_1ef05_row4_col2" class="data row4 col2" >5</td>
+      <td id="T_1ef05_row4_col3" class="data row4 col3" >3</td>
+      <td id="T_1ef05_row4_col4" class="data row4 col4" >Let's think step by step: The user query asks about the approval process for insurance claims. The agent made a single tool call to 'office365_search' with the query 'claims approval process', which is directly relevant to the user's question. The parameters passed to the tool are appropriate and grounded in the user's query. The tool returned a relevant document snippet that contains detailed information about the claims process, including timelines and payment methods, which directly addresses the user's query. There are no errors reported in the tool call, and only one tool call was made, which is sufficient to address the query. There are no missing or excess tool calls. Therefore, the tool call is fully relevant, correct, and efficient, and the agent reached the output that addresses the user's query without any issues.</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 1 of 4</em></p>
+<hr>
+<h3>Prompt 2: What can you help me with as the Zava Insurance Claims agent?</h3>
+<table>
+<tr><th>Response</th><td><p>I’m your <strong>Zava Insurance Claims Agent</strong>, focused specifically on helping you manage <strong>insurance claims end‑to‑end</strong>. Here’s what I can help you do—quickly and accurately—right from this interface:</p>
+<hr />
+<h2>🧾 Claims Management</h2>
+<ul>
+<li><strong>View the claims dashboard</strong> with status summaries and filters (e.g., Open, Pending, Approved).</li>
+<li><strong>Look up a specific claim</strong> by claim number or policy holder name.</li>
+<li><strong>Get a concise claim summary</strong> for fast context.</li>
+<li><strong>Update claim statuses</strong> (with notes) when a claim moves forward or changes state.</li>
+</ul>
+<p><em>Example:</em>  </p>
+<blockquote>
+<p>“Show me all open claims”<br />
+“Give me a summary of claim CN202504990”<br />
+“Update claim 2 to Approved with a note”</p>
+</blockquote>
+<hr />
+<h2>🏠 Inspections</h2>
+<ul>
+<li><strong>Create inspections</strong> (initial, re‑inspection, or final) for a claim.</li>
+<li><strong>Assign or reassign inspectors</strong> and set priorities or scheduled dates.</li>
+<li><strong>Update inspection outcomes</strong>: status, findings, and recommended actions.</li>
+<li><strong>View available inspectors</strong> and their specializations.</li>
+</ul>
+<p><em>Example:</em>  </p>
+<blockquote>
+<p>“Schedule an initial inspection for claim CN202504990”<br />
+“Update inspection insp‑003 with completed findings”<br />
+“List all available inspectors”</p>
+</blockquote>
+<hr />
+<h2>🛒 Purchase Orders</h2>
+<ul>
+<li><strong>Approve, reject, or complete purchase orders</strong> tied to claims.</li>
+<li>Add <strong>clear notes</strong> for audit and communication purposes.</li>
+</ul>
+<p><em>Example:</em>  </p>
+<blockquote>
+<p>“Approve purchase order po‑001 with a note”</p>
+</blockquote>
+<hr />
+<h2>🔨 Contractors</h2>
+<ul>
+<li><strong>Browse contractors</strong> approved for repair work.</li>
+<li><strong>Filter by specialty</strong> (Roofing, Water Damage, Fire, etc.) or preferred status.</li>
+</ul>
+<p><em>Example:</em>  </p>
+<blockquote>
+<p>“Show preferred roofing contractors”</p>
+</blockquote>
+<hr />
+<h2>📚 Claims Policies &amp; Documentation</h2>
+<ul>
+<li><strong>Answer questions about claims procedures, coverage rules, or workflows</strong> by referencing Zava Insurance documentation stored in SharePoint.</li>
+<li>I’ll always <strong>cite the exact document and location</strong>—and tell you clearly if nothing relevant is found.</li>
+</ul>
+<p><em>Example:</em>  </p>
+<blockquote>
+<p>“What’s the approval process for water damage claims?”</p>
+</blockquote>
+<hr />
+<h2>✅ What I <em>don’t</em> do</h2>
+<p>To keep things accurate and safe, I’m scoped <strong>only</strong> to insurance claims operations. I can’t help with:
+- HR, IT, marketing, or general company questions<br />
+- Drafting emails or documents unrelated to claims<br />
+- Guessing or filling in gaps when documentation doesn’t exist</p>
+<hr />
+<p>If you’d like, we can start right away.<br />
+<strong>Just tell me what you want to do</strong>, for example:
+- “Show me the claims dashboard”
+- “Look up claim CN202504990”
+- “Schedule an inspection for a claim”</p>
+<p>I’m ready when you are.</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should provide a coherent, organized overview of its capabilities: viewing claims dashboards, looking up claim details, managing inspections (create, update, list inspectors), updating claim statuses, managing purchase orders, browsing contractors, and referencing claims documentation from SharePoint. The response should be structured and consistent with the agent's declared instructions.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_0b86c_row0_col1, #T_0b86c_row1_col1, #T_0b86c_row2_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+#T_0b86c_row3_col1 {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+</style>
+<table id="T_0b86c" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_0b86c_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_0b86c_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_0b86c_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_0b86c_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_0b86c_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_0b86c_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_0b86c_row0_col1" class="data row0 col1" >pass</td>
+      <td id="T_0b86c_row0_col2" class="data row0 col2" >5</td>
+      <td id="T_0b86c_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_0b86c_row0_col4" class="data row0 col4" >The response directly and comprehensively explains the specific services the Zava Insurance Claims agent provides, including claims management, inspections, purchase orders, contractors, and policy documentation, with examples and clear scope limitations, fully addressing the query.</td>
+    </tr>
+    <tr>
+      <td id="T_0b86c_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_0b86c_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_0b86c_row1_col2" class="data row1 col2" >5</td>
+      <td id="T_0b86c_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_0b86c_row1_col4" class="data row1 col4" >The response is highly coherent because it is well-organized, logically structured, and clearly addresses the query with detailed, connected information and examples, facilitating easy understanding.</td>
+    </tr>
+    <tr>
+      <td id="T_0b86c_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_0b86c_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_0b86c_row2_col2" class="data row2 col2" >5</td>
+      <td id="T_0b86c_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_0b86c_row2_col4" class="data row2 col4" >The response fully and accurately reflects all the essential capabilities described in the CONTEXT without adding unsupported information or omitting critical details, making it a complete and faithful representation of the agent's functions.</td>
+    </tr>
+    <tr>
+      <td id="T_0b86c_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_0b86c_row3_col1" class="data row3 col1" >fail</td>
+      <td id="T_0b86c_row3_col2" class="data row3 col2" >0</td>
+      <td id="T_0b86c_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_0b86c_row3_col4" class="data row3 col4" >Found 0 unique citation(s) : None</td>
+    </tr>
+    <tr>
+      <td id="T_0b86c_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_0b86c_row4_col1" class="data row4 col1" ></td>
+      <td id="T_0b86c_row4_col2" class="data row4 col2" ></td>
+      <td id="T_0b86c_row4_col3" class="data row4 col3" ></td>
+      <td id="T_0b86c_row4_col4" class="data row4 col4" ></td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 2 of 4</em></p>
+<hr>
+<h3>Prompt 3: Can you help me write a marketing email for Zava Insurance's new product launch?</h3>
+<table>
+<tr><th>Response</th><td><p>I can’t help with writing marketing emails or other content outside of insurance <strong>claims management</strong>. My scope is limited to tasks like viewing and updating claims, managing inspections and purchase orders, browsing contractors, and answering questions based on Zava Insurance claims documentation.</p>
+<p>To move this forward quickly, here are a couple of good options:
+- <strong>Reach out to your Marketing or Product Marketing partner</strong>—they’ll typically own launch messaging and email copy.
+- <strong>Use your internal marketing templates or brand guidelines</strong> (often in SharePoint) to draft the email with the right tone and compliance checks.</p>
+<p>If you’d like, I <em>can</em> help in claims-related ways that support a launch—such as:
+- Pulling <strong>claims metrics or outcomes</strong> that could be referenced in enablement materials
+- Summarizing <strong>claims process improvements</strong> tied to the new product (if documented)
+- Checking <strong>claims readiness</strong> (inspections, workflows, contractors) for the product launch</p>
+<p>Just let me know how you’d like to use claims data or processes to support the launch.</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should decline the request, explaining that it is scoped to insurance claims management tasks such as viewing claims, managing inspections, updating statuses, and referencing claims documentation. It should not assist with marketing content.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_3d83c_row0_col1, #T_3d83c_row1_col1, #T_3d83c_row2_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+#T_3d83c_row3_col1 {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+</style>
+<table id="T_3d83c" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_3d83c_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_3d83c_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_3d83c_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_3d83c_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_3d83c_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_3d83c_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_3d83c_row0_col1" class="data row0 col1" >pass</td>
+      <td id="T_3d83c_row0_col2" class="data row0 col2" >3</td>
+      <td id="T_3d83c_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_3d83c_row0_col4" class="data row0 col4" >The response clearly states it cannot write the marketing email but offers relevant alternative suggestions and ways to support the launch using claims data. It addresses the query's intent partially but does not fulfill the direct request to write the email.</td>
+    </tr>
+    <tr>
+      <td id="T_3d83c_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_3d83c_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_3d83c_row1_col2" class="data row1 col2" >4</td>
+      <td id="T_3d83c_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_3d83c_row1_col4" class="data row1 col4" >The response is coherent because it logically and clearly explains the assistant's limitations and offers relevant alternatives and support options. It is well-organized and easy to follow, directly addressing the user's request with a clear and orderly presentation of ideas.</td>
+    </tr>
+    <tr>
+      <td id="T_3d83c_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_3d83c_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_3d83c_row2_col2" class="data row2 col2" >5</td>
+      <td id="T_3d83c_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_3d83c_row2_col4" class="data row2 col4" >The RESPONSE fully adheres to the CONTEXT by declining marketing help and focusing on claims management tasks, accurately reflecting the scope and providing complete, relevant information without unsupported additions or omissions.</td>
+    </tr>
+    <tr>
+      <td id="T_3d83c_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_3d83c_row3_col1" class="data row3 col1" >fail</td>
+      <td id="T_3d83c_row3_col2" class="data row3 col2" >0</td>
+      <td id="T_3d83c_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_3d83c_row3_col4" class="data row3 col4" >Found 0 unique citation(s) : None</td>
+    </tr>
+    <tr>
+      <td id="T_3d83c_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_3d83c_row4_col1" class="data row4 col1" ></td>
+      <td id="T_3d83c_row4_col2" class="data row4 col2" ></td>
+      <td id="T_3d83c_row4_col3" class="data row4 col3" ></td>
+      <td id="T_3d83c_row4_col4" class="data row4 col4" ></td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 3 of 4</em></p>
+<hr>
+<h3>Prompt 4: Show me all open insurance claims</h3>
+<table>
+<tr><th>Response</th><td><p>Here’s the <strong>claims dashboard filtered to show all open insurance claims</strong>. It includes claims that are currently open and under investigation, along with key details like policy holder, property, damage type, and assigned adjuster. citeturn1search2</p>
+<p><strong>What would you like to do next?</strong>
+- Open a specific claim to see full details (inspections, purchase orders, notes)
+- Filter by a <strong>policy holder name</strong> or another status (e.g., Pending, Approved)
+- Update the status of a claim
+- Schedule or update an inspection for one of these open claims</p>
+<p>Just tell me how you’d like to proceed.</p></td></tr>
+<tr><th>Expected Response</th><td><p>The agent should invoke the show-claims-dashboard tool with the status parameter set to 'Open' to display the claims dashboard filtered to show only open claims, including status overview and summary metrics.</p></td></tr>
+</table>
+<details open class="score-details"><summary>Show/Hide Evaluation Metric Scores</summary>
+<style type="text/css">
+#T_4029c_row0_col1, #T_4029c_row1_col1, #T_4029c_row2_col1, #T_4029c_row3_col1, #T_4029c_row4_col1 {
+  background-color: #d4edda;
+  color: #155724;
+}
+</style>
+<table id="T_4029c" style="margin-top:1em;">
+  <thead>
+    <tr>
+      <th id="T_4029c_level0_col0" class="col_heading level0 col0" >Metric</th>
+      <th id="T_4029c_level0_col1" class="col_heading level0 col1" >Result</th>
+      <th id="T_4029c_level0_col2" class="col_heading level0 col2" >Score</th>
+      <th id="T_4029c_level0_col3" class="col_heading level0 col3" >Threshold</th>
+      <th id="T_4029c_level0_col4" class="col_heading level0 col4" >Reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="T_4029c_row0_col0" class="data row0 col0" >Relevance</td>
+      <td id="T_4029c_row0_col1" class="data row0 col1" >pass</td>
+      <td id="T_4029c_row0_col2" class="data row0 col2" >5</td>
+      <td id="T_4029c_row0_col3" class="data row0 col3" >3</td>
+      <td id="T_4029c_row0_col4" class="data row0 col4" >The response directly provides a filtered claims dashboard showing all open insurance claims, exactly matching the query. It also offers additional options for interacting with the claims, enhancing usability without deviating from the request.</td>
+    </tr>
+    <tr>
+      <td id="T_4029c_row1_col0" class="data row1 col0" >Coherence</td>
+      <td id="T_4029c_row1_col1" class="data row1 col1" >pass</td>
+      <td id="T_4029c_row1_col2" class="data row1 col2" >4</td>
+      <td id="T_4029c_row1_col3" class="data row1 col3" >3</td>
+      <td id="T_4029c_row1_col4" class="data row1 col4" >The response is coherent because it logically and clearly presents information about open insurance claims and guides the user on possible next actions, maintaining a smooth flow and clear connections between ideas.</td>
+    </tr>
+    <tr>
+      <td id="T_4029c_row2_col0" class="data row2 col0" >Groundedness</td>
+      <td id="T_4029c_row2_col1" class="data row2 col1" >pass</td>
+      <td id="T_4029c_row2_col2" class="data row2 col2" >5</td>
+      <td id="T_4029c_row2_col3" class="data row2 col3" >3</td>
+      <td id="T_4029c_row2_col4" class="data row2 col4" >The RESPONSE accurately and completely reflects the CONTEXT by describing the claims dashboard filtered to show open claims and includes relevant details and options without adding unsupported information or omitting critical points.</td>
+    </tr>
+    <tr>
+      <td id="T_4029c_row3_col0" class="data row3 col0" >Citations</td>
+      <td id="T_4029c_row3_col1" class="data row3 col1" >pass</td>
+      <td id="T_4029c_row3_col2" class="data row3 col2" >1</td>
+      <td id="T_4029c_row3_col3" class="data row3 col3" >1</td>
+      <td id="T_4029c_row3_col4" class="data row3 col4" >Found 1 unique citation(s) : turn1search2</td>
+    </tr>
+    <tr>
+      <td id="T_4029c_row4_col0" class="data row4 col0" >Tool Call Accuracy</td>
+      <td id="T_4029c_row4_col1" class="data row4 col1" >pass</td>
+      <td id="T_4029c_row4_col2" class="data row4 col2" >not applicable</td>
+      <td id="T_4029c_row4_col3" class="data row4 col3" >3</td>
+      <td id="T_4029c_row4_col4" class="data row4 col4" >No tool calls found in response or provided tool_calls.</td>
+    </tr>
+  </tbody>
+</table>
+
+</details>
+<p><em>Entry 4 of 4</em></p>
+</div>
+</body></html>
+<p><small>Generated by M365 Copilot Agents Evaluation CLI.</small></p>

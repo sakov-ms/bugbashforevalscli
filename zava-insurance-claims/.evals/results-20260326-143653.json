@@ -1,0 +1,90 @@
+{
+  "individual_results": [
+    {
+      "prompt": "What can you help me with as the Zava Insurance Claims agent?",
+      "response": "As the Zava Insurance Claims agent, I can assist you with a variety of tasks related to managing insurance claims, inspections, contractors, and purchase orders. Here are some of the key things I can help you with:\n\n### Claims Management\n- **Claims Dashboard**: Show an overview of all claims with status filters and summary metrics.\n- **Claim Details**: Look up individual claim details including related inspections, purchase orders, and contractor assignments.\n- **Update Claim Status**: Update claim statuses (Open, Approved, Pending, Denied, Closed, Open - Under Investigation) with optional notes.\n- **Claim Summaries**: Provide text summaries of specific claims for quick review.\n\n### Inspections\n- **Create Inspection Records**: Create new inspection records for claims, specifying type (initial, re-inspection, final), priority, scheduled date, and inspector assignment.\n- **Update Inspection Records**: Update existing inspection records — change status, add findings, update recommended actions, reassign inspectors.\n- **List Inspectors**: List all available inspectors and their specializations.\n\n### Purchase Orders\n- **Update Purchase Order Status**: Update purchase order statuses (approved, rejected, completed, in-progress) with optional notes.\n\n### Contractors\n- **Browse Contractors**: Browse available contractors for insurance repair work.\n- **Filter Contractors**: Filter contractors by specialty (Roofing, Water Damage, Fire, etc.) or preferred status.\n\n### Claims Documentation\n- **Reference Documentation**: Reference Zava Insurance claims documentation from SharePoint to answer questions about policies, procedures, and guidelines.\n- **Provide Accurate Answers**: Use this knowledge source to provide accurate answers about claims processes, coverage rules, and approval workflows.\n\nIs there a specific task or query you need help with right now?",
+      "expected_response": "The agent should provide a coherent, organized overview of its capabilities: viewing claims dashboards, looking up claim details, managing inspections (create, update, list inspectors), updating claim statuses, managing purchase orders, browsing contractors, and referencing claims documentation from SharePoint. The response should be structured and consistent with the agent's declared instructions.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response directly and comprehensively details the various ways the Zava Insurance Claims agent can assist, covering claims, inspections, contractors, purchase orders, and documentation. It fully addresses the query with clear, organized, and relevant information.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is well-organized, logically structured, and directly answers the question with clear, connected ideas and smooth transitions, making it easy to understand and follow.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The response fully and accurately reflects all the key capabilities outlined in the context, presenting a complete and organized overview without adding unsupported information or omitting critical details.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}"
+      }
+    },
+    {
+      "prompt": "Can you help me write a marketing email for Zava Insurance's new product launch?",
+      "response": "Sure, I can help you with that! Here’s a draft for a marketing email announcing Zava Insurance's new product launch:\n\n---\n\n**Subject:** Introducing Our Exciting New Product – [Product Name]!\n\n**Dear [Recipient's Name],**\n\nWe are thrilled to announce the launch of our latest innovation at Zava Insurance – [Product Name]! This new product is designed to provide you with enhanced protection and peace of mind, tailored to meet your unique needs.\n\n**Why Choose [Product Name]?**\n\n- **Comprehensive Coverage:** Our new product offers extensive coverage options to ensure you are protected against a wide range of risks.\n- **Affordable Premiums:** Enjoy competitive pricing without compromising on the quality of coverage.\n- **Easy Claims Process:** Experience a hassle-free claims process with our dedicated support team ready to assist you every step of the way.\n- **Customizable Plans:** Tailor your insurance plan to fit your specific requirements and lifestyle.\n\n**Exclusive Launch Offer:**\n\nTo celebrate the launch, we are offering an exclusive discount on [Product Name] for a limited time. Sign up now and take advantage of this special offer!\n\n**How to Get Started:**\n\n1. **Visit Our Website:** Learn more about [Product Name] and explore the various coverage options available.\n2. **Contact Us:** Our customer service team is here to answer any questions you may have and help you choose the best plan for you.\n3. **Sign Up:** Secure your coverage today and enjoy the benefits of our new product.\n\nAt Zava Insurance, we are committed to providing you with the best insurance solutions to protect what matters most to you. Thank you for choosing us as your trusted insurance partner.\n\n**Best regards,**\n\n[Your Name]  \n[Your Title]  \nZava Insurance\n\n---\n\nFeel free to customize this template further to better fit your needs. If you need any additional information or adjustments, please let me know!",
+      "expected_response": "The agent should decline the request, explaining that it is scoped to insurance claims management tasks such as viewing claims, managing inspections, updating statuses, and referencing claims documentation. It should not assist with marketing content.",
+      "results": {
+        "partial_match_score": "{\n    \"partial_match\": 0.0,\n    \"partial_match_result\": \"fail\",\n    \"partial_match_threshold\": 0.5,\n    \"partial_match_reason\": \"Match score: 0.000 (below threshold 0.5)\"\n}"
+      }
+    },
+    {
+      "prompt": "Show me all open insurance claims",
+      "response": "Here are the details of all open insurance claims:\n\n1. **Claim Number:** CN202504999\n   - **Policy Holder:** Amanda Rodriguez\n   - **Property:** 1069 Lake View Dr, Tacoma, WA 98401\n   - **Date of Loss:** 2025-08-30\n   - **Status:** Open - Claim is under investigation\n   - **Damage Types:** Structural damage (severe), Foundation issues\n   - **Estimated Loss:** \\$31,486\n   - **Adjuster Assigned:** adj-008\n   - **Notes:** Initial report filed, Standard processing\n\n2. **Claim Number:** CN202505003\n   - **Policy Holder:** Jessica Walker\n   - **Property:** 2824 Park Pl, Eugene, OR 97401\n   - **Date of Loss:** 2025-08-23\n   - **Status:** Open - Claim is under investigation\n   - **Damage Types:** Roof damage (minor), Storm damage\n   - **Estimated Loss:** \\$33,627\n   - **Adjuster Assigned:** adj-005\n\n3. **Claim Number:** CN202504991\n   - **Policy Holder:** Christopher Thompson\n   - **Property:** 259 Valley Rd, Vancouver, WA 98660\n   - **Date of Loss:** 2025-12-08\n   - **Status:** Open - Under Investigation\n   - **Damage Types:** Vandalism (severe), Property damage\n   - **Estimated Loss:** \\$29,794\n   - **Adjuster Assigned:** adj-004\n   - **Notes:** Initial report filed, Standard processing, Status updated per user request\n\n4. **Claim Number:** CN202505010\n   - **Policy Holder:** Rebecca Jackson\n   - **Property:** 9922 Main St, Spokane, WA 99201\n   - **Date of Loss:** 2025-09-24\n   - **Status:** Open - Claim is under investigation\n   - **Damage Types:** Roof damage (severe), Storm damage\n   - **Estimated Loss:** \\$41,048\n   - **Adjuster Assigned:** adj-002\n   - **Notes:** Initial report filed, Awaiting documentation\n\n5. **Claim Number:** CN202504993\n   - **Policy Holder:** Christopher Anderson\n   - **Property:** 6927 Lake View Dr, Salem, OR 97301\n   - **Date of Loss:** 2025-10-19\n   - **Status:** Open - Claim is under investigation\n   - **Damage Types:** Mold damage (minor), Water damage\n   - **Estimated Loss:** \\$3,195\n   - **Adjuster Assigned:** adj-003\n   - **Notes:** Urgent priority\n\n6. **Claim Number:** CN202504996\n   - **Policy Holder:** Amanda Lee\n   - **Property:** 9338 Elm St, Vancouver, WA 98660\n   - **Date of Loss:** 2025-09-13\n   - **Status:** Open - Claim is under investigation\n   - **Damage Types:** Hail damage (severe), Storm damage\n   - **Estimated Loss:** \\$29,840\n   - **Adjuster Assigned:** adj-001\n   - **Notes:** Initial report filed, Awaiting documentation, Standard processing\n\nIf you need more details on any specific claim, please let me know!",
+      "expected_response": "The agent should invoke the show-claims-dashboard tool with the status parameter set to 'Open' to display the claims dashboard filtered to show only open claims, including status overview and summary metrics.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response directly lists all open insurance claims with detailed information for each, fully addressing the query. It provides comprehensive data including claim numbers, policy holders, status, and notes, making it a complete and relevant answer.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is well-organized, logically structured, and directly addresses the query by listing all open insurance claims with relevant details. It flows smoothly and is easy to follow, demonstrating coherence at a high level.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The response fully adheres to the context by providing detailed information about open claims as requested, without adding unsupported information or omitting critical details.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "tool_call_accuracy_score": "{\n    \"tool_call_accuracy\": \"not applicable\",\n    \"tool_call_accuracy_result\": \"pass\",\n    \"tool_call_accuracy_threshold\": 3,\n    \"tool_call_accuracy_reason\": \"No tool calls found in response or provided tool_calls.\",\n    \"details\": {}\n}"
+      }
+    }
+  ],
+  "aggregate_statistics": {
+    "Coherence": {
+      "total_prompts": 3,
+      "prompts_evaluated": 2,
+      "total_evaluated": 2,
+      "pass_count": 2,
+      "fail_count": 0,
+      "pass_rate": 100.0,
+      "avg_score": 5.0,
+      "threshold": 3,
+      "scores": [
+        5.0,
+        5.0
+      ]
+    },
+    "Groundedness": {
+      "total_prompts": 3,
+      "prompts_evaluated": 2,
+      "total_evaluated": 2,
+      "pass_count": 2,
+      "fail_count": 0,
+      "pass_rate": 100.0,
+      "avg_score": 5.0,
+      "threshold": 3,
+      "scores": [
+        5.0,
+        5.0
+      ]
+    },
+    "Partial Match": {
+      "total_prompts": 3,
+      "prompts_evaluated": 1,
+      "total_evaluated": 1,
+      "pass_count": 0,
+      "fail_count": 1,
+      "pass_rate": 0.0,
+      "avg_score": 0.0,
+      "threshold": 0.5,
+      "scores": [
+        0.0
+      ]
+    },
+    "Relevance": {
+      "total_prompts": 3,
+      "prompts_evaluated": 2,
+      "total_evaluated": 2,
+      "pass_count": 2,
+      "fail_count": 0,
+      "pass_rate": 100.0,
+      "avg_score": 5.0,
+      "threshold": 3,
+      "scores": [
+        5.0,
+        5.0
+      ]
+    }
+  }
+}

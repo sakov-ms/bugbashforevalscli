@@ -1,186 +1,154 @@
-# Bug Bash — PR #360 (Retrieval Evaluators) on Zava Insurance Claims Agent
-
-End-to-end guide to set up and run the bug bash for **[microsoft/M365-Copilot-Agent-Evals#360](https://github.com/microsoft/M365-Copilot-Agent-Evals/pull/360)** — which adds the new `RetrievalQuery` and `RetrievalResult` evaluators — against the **Zava Insurance Claims** declarative agent.
-
-This README walks you from zero (clone the agent, install the eval CLI) to running an evaluation and viewing an HTML report.
+# Bug Bash Retrieval Evaluators on Zava Insurance Claims Agent
 
 ---
 
-## 1. Folder layout (after setup)
+## 1. Prerequisites
 
-You will end up with two sibling folders under one working directory (e.g. `C:\Users\<you>\bootcamp\`):
-
-```
-bootcamp/
-├── zava-insurance-claims/         ← the agent project (provision to your tenant)
-└── evals cli testing/             ← the eval CLI workspace (where you run tests)
-    ├── package/                   ← unpacked CLI source
-    │   └── src/clients/cli/main.py
-    ├── env/
-    │   └── .env.local             ← your secrets / config (NOT committed)
-    ├── evals/                     ← the 10 dataset JSON files (this repo's datasets/)
-    └── .evals/                    ← HTML / JSON / CSV reports go here
-```
-
-The 10 prioritized datasets in this `bugbash/datasets/` folder are what you copy into the CLI's `evals/` folder.
+| Tool | Why |
+|---|---|
+| **VS Code** | Host for the M365 Agents Toolkit extension that provisions the agent. |
+| **Microsoft 365 Agents Toolkit** (VS Code extension) | Signs you into M365, builds the agent app package, and uploads it to your tenant. |
+| **Node.js 18+** and **npm** | Required to install the `@microsoft/m365-copilot-eval` CLI. |
+| **Python 3.10+** | Required by the eval CLI runtime. |
+| **Access to the Zava Claims SharePoint site** | The agent's knowledge source - 'https://microsoft.sharepoint-df.com/teams/ZavaClaims/Shared Documents' |
 
 ---
 
-## 2. Get the Zava Insurance Claims agent
+## 2. Install and provision the Zava Insurance Claims agent (via the ATK extension)
 
-Clone (or download as zip) the agent project. It contains the declarative agent manifest, MCP plugin manifest, and SharePoint knowledge source configuration.
-
-```powershell
-cd C:\Users\<you>\bootcamp
-git clone <repo-url-for-zava-insurance-claims> zava-insurance-claims
-# or copy the folder from this repo: bugbash/zava-insurance-claims/
-```
-
-### Provision the agent to your tenant
-
-From the agent folder, sign in to M365 and provision a local-mode build:
+### 2.1  Get the agent project locally
 
 ```powershell
 cd zava-insurance-claims
-npx -y --package @microsoft/m365agentstoolkit-cli atk auth login m365
-npx -y --package @microsoft/m365agentstoolkit-cli atk provision --env local
+# Either clone the repo, or copy the folder shipped with this bug bash:
+# git clone <repo-url-for-zava-insurance-claims> zava-insurance-claims
 ```
 
-> ⚠️ The agent's `declarativeAgent.json` points to a SharePoint site at `https://microsoft.sharepoint-df.com/teams/ZavaClaims/Shared Documents`. If your account does not have access, edit the `oneDriveAndSharePoint` capability in `appPackage/declarativeAgent.json` to point at your own SharePoint site (containing the Zava claims policy guidebook) and re-provision.
+You should end up with a folder containing `appPackage\`, `env\`, `teamsapp.yml`, etc.
 
----
+### 2.2  Install the Microsoft 365 Agents Toolkit extension in VS Code
 
-## 3. Get the eval CLI (PR #360 build)
+1. Open **VS Code**.
+2. Go to the **Extensions** view (Ctrl+Shift+X).
+3. Search for **"Microsoft 365 Agents Toolkit"** (publisher: *Microsoft*) and click **Install**.
+4. After install, the ATK side bar icon appears on the left rail.
 
-The CLI is published as an npm-style tarball (`.tgz`) containing the Python CLI source plus a Node wrapper.
+### 2.3  Open the agent folder in VS Code
 
-1. Download the tarball from the PR (or your team's distribution channel). Example file name: `microsoft-m365-copilot-eval-1.8.0-preview.1.tgz`.
-2. Create a workspace folder and put the tarball inside:
-
-   ```powershell
-   cd C:\Users\<you>\bootcamp
-   mkdir "evals cli testing"
-   cd "evals cli testing"
-   # Drop the .tgz file here, then:
-   ```
-3. Extract and install:
-
-   ```powershell
-   # 3a. Initialize an npm workspace and install the tarball
-   npm init -y
-   npm install .\microsoft-m365-copilot-eval-1.8.0-preview.1.tgz
-
-   # 3b. The Python CLI source lives at: package\src\clients\cli\main.py
-   #     Install the Python dependencies it needs:
-   python -m pip install --upgrade pip
-   python -m pip install python-dotenv azure-ai-evaluation requests msal markdown jsonschema
-   ```
-
-   > If you have a `requirements.txt` inside `package/`, prefer: `python -m pip install -r .\package\requirements.txt`
-
----
-
-## 4. Configure environment variables (`env/.env.local`)
-
-Create `env\.env.local` in your `evals cli testing` folder with the following keys. **All are required** — the CLI fails fast if any are missing.
-
-```dotenv
-# --- Azure OpenAI (judge model used by Relevance / Coherence / Groundedness / Similarity) ---
-AZURE_AI_OPENAI_ENDPOINT=https://<your-aoai-resource>.openai.azure.com/
-AZURE_AI_API_KEY=<your-azure-openai-api-key>
-AZURE_AI_API_VERSION=2024-08-01-preview
-AZURE_AI_MODEL_NAME=<your-deployment-name>          # e.g. gpt-4o, gpt-4o-mini
-
-# --- WorkIQ A2A endpoint (the bridge that calls your M365 agent and returns retrieval artifacts) ---
-WORK_IQ_A2A_ENDPOINT=https://<workiq-a2a-host>/    # provided by the WorkIQ A2A team
-WORK_IQ_A2A_CLIENT_ID=<entra-app-client-id>        # Entra app used to acquire a token for the A2A endpoint
-WORK_IQ_A2A_SCOPES=api://<workiq-a2a-app-id>/.default
-TENANT_ID=<your-entra-tenant-id-guid>              # tenant where the agent is provisioned
+```
+File → Open Folder → zava-insurance-claims
 ```
 
-### What each variable does
+### 2.4  Sign in and provision
 
-| Variable | Used for | Where to get it |
-|---|---|---|
-| `AZURE_AI_OPENAI_ENDPOINT` | Base URL of your Azure OpenAI resource — the LLM-judge evaluators (`Relevance`, `Coherence`, `Groundedness`, `Similarity`) call this. | Azure Portal → Azure OpenAI resource → *Keys and Endpoint*. |
-| `AZURE_AI_API_KEY` | Auth for the Azure OpenAI judge calls. | Same place as endpoint. |
-| `AZURE_AI_API_VERSION` | Azure OpenAI REST API version (e.g. `2024-08-01-preview`). | Azure OpenAI docs / preview tracker. |
-| `AZURE_AI_MODEL_NAME` | The **deployment name** of the chat model the evaluators will use (NOT the underlying model id). | Azure OpenAI Studio → *Deployments*. |
-| `WORK_IQ_A2A_ENDPOINT` | Where the CLI sends the agent prompt; the WorkIQ A2A service relays to M365 Copilot and returns the response **plus** the retrieval artifact (`application/vnd.ms-workiq-internal.retrieval`) that the new `RetrievalQuery` / `RetrievalResult` evaluators consume. | Provided by the WorkIQ A2A team for your tenant. |
-| `WORK_IQ_A2A_CLIENT_ID` | Entra app client id used to acquire a bearer token to call the A2A endpoint. | Entra Portal → *App registrations*. |
-| `WORK_IQ_A2A_SCOPES` | OAuth scope string for the A2A app (typically `api://<a2a-app-id>/.default`). | The A2A team / Entra app *Expose an API* tab. |
-| `TENANT_ID` | Your Entra tenant id (a GUID). Used for both auth and routing. | Entra Portal → *Overview* → *Tenant ID*. |
+1. Click the **Microsoft 365 Agents Toolkit** icon in the side bar.
+2. Under **ACCOUNTS**, sign in to:
+   - **Microsoft 365** — the account/tenant that will host the agent.
+   - **Azure** — if you plan to deploy any backend resources (not strictly required for this bug bash).
+3. Under **LIFECYCLE**, click **Provision**.
+4. In the prompt, choose the environment **`local`**.
+5. ATK builds the app package (`appPackage\build\appPackage.local.zip`) and uploads it to your tenant. Watch the *Output* panel for progress; provisioning completes in 1–2 minutes.
 
-> 🔒 Keep `.env.local` out of source control (`.gitignore` it). Treat the API key, client id, and scopes as secrets.
+### 2.5  (Optional) Point the knowledge source at your own SharePoint
+
+The agent's `appPackage\declarativeAgent.json` references:
+```
+https://microsoft.sharepoint-df.com/teams/ZavaClaims/Shared Documents
+```
+If your account does not have access, edit the `OneDriveAndSharePoint` capability's `items_by_url[0].url` to point at a SharePoint site **you own** that contains the Zava claims policy guidebook, then re-run **Provision**.
+
+### 2.6  Try the agent in Microsoft 365 Copilot
+
+1. Open **<https://copilot.microsoft.com>** in your browser, signed in with the same M365 account you used in ATK.
+2. Click the **agent picker** (top of the chat / right side panel) and choose **Zava Insurance Claims (local)**.
+3. Try one of the built-in conversation starters:
+   - *"Show me the claims dashboard"*
+   - *"What does our claims documentation say about the approval process?"*
+   - *"Show me the details for claim CN202504990"*
+
+If the agent responds and (for knowledge prompts) cites the SharePoint doc, you're ready to run evaluations.
 
 ---
 
-## 5. Copy the datasets into the CLI workspace
+## 3. Install the eval CLI
 
-This `bugbash/datasets/` folder contains the 10 prioritized test JSON files (8 RAG + 2 MCP). Copy them next to the CLI:
+The CLI is published on npm: **<https://www.npmjs.com/package/@microsoft/m365-copilot-eval>**. Install it globally so the `runevals` command is on your PATH:
 
 ```powershell
-$src  = "C:\Users\<you>\bootcamp\bugbash\datasets"
-$dest = "C:\Users\<you>\bootcamp\evals cli testing\evals"
-New-Item -ItemType Directory -Force -Path $dest | Out-Null
-Get-ChildItem $src -Recurse -Filter *.json | Copy-Item -Destination $dest -Force
+npm install -g @microsoft/m365-copilot-eval
 ```
 
-You should now see 10 files under `evals cli testing\evals\` (file names like `rag-01-mortgage-joint-check-threshold.json`, `mcp-04-show-claim-detail-by-number.json`, etc.).
-
-Also create the report output folder:
-
+Verify:
 ```powershell
-New-Item -ItemType Directory -Force -Path "C:\Users\<you>\bootcamp\evals cli testing\.evals" | Out-Null
+runevals --version 
+runevals --help
 ```
+
+> You should see 1.9.* in the version
+> If `runevals` is not recognized, ensure your npm global bin folder is on PATH:
+> `npm config get prefix` → add `<that path>` (Windows) or `<that path>/bin` (Mac/Linux) to PATH.
 
 ---
 
-## 6. Run an evaluation
+## 4. A little bit about the new `RetrievalQuery` and `RetrievalResult` evaluators 
 
-From `C:\Users\<you>\bootcamp\evals cli testing\` run:
+PR #360 introduces two **deterministic, non-LLM** evaluators that grade the retrieval artifact your agent emits (the JSON describing the queries it ran and the items it got back). Both produce a binary `pass`/`fail` (score `1.0`/`0.0`) plus a `diagnostic_code`, so failures are precisely classifiable without an LLM judge.
+
+### `RetrievalQuery` — *did the agent search the right thing?*
+Inspects every `queryString` issued under a given `capability` (e.g. `OneDriveAndSharePoint`) and grades whether the **queries themselves** look right. You configure a `selector` (case-insensitive substring that picks which queries to judge), plus optional `includes` (terms that must all appear) and `excludes` (terms that must not appear). Failures surface as one of `no_matching_query`, `required_terms_missing`, `excluded_terms_found`, `mixed_term_failure`, or `retrieval_failure`.
+
+### `RetrievalResult` — *did the agent retrieve the right items?*
+Grades the **items returned** by a capability against your expectations. You set `capability` plus either `expected_items` (specific docs/URLs, each with optional verbatim extract phrases that must appear in the snippet) and/or `min_expected_count` (minimum number of hits required). `max_rank` (default `10`) bounds how deep into the ranked results the evaluator looks, so it doubles as an ordering/relevance assertion.
+
+---
+
+## 5. Run an evaluation
+
+From inside the **`zava-insurance-claims`** folder run `runevals`:
 
 ```powershell
-python -m dotenv -f .\env\.env.local run -- python .\package\src\clients\cli\main.py --prompts-file ".\evals\rag-01-mortgage-joint-check-threshold.json" --output ".\.evals\rag-01-report.html"
+Go to folder zava-insurance-claims
+
+runevals --env local --prompts-file "<path to Zava agent>\zava-insurance-claims\evals\rag-07-failure-no-matching-query.json" --log-level debug --output "<path to Zava agent>\zava-insurance-claims\.evals\2026-05-27_19-25-21-560.html"
 ```
 
-### What every part of this command does
+### What every flag does
 
-| Token | What it means |
+| Flag | What it means |
 |---|---|
-| `python -m dotenv` | Invokes the [`python-dotenv`](https://pypi.org/project/python-dotenv/) CLI as a module. We use the module form because the `dotenv` script may not be on Windows `PATH`. |
-| `-f .\env\.env.local` | Tells `dotenv` to load environment variables from `env\.env.local` (not the default `.env` in cwd). |
-| `run --` | Tells `dotenv` to execute the command that follows **with the loaded env vars injected** into the subprocess. The `--` terminates `dotenv`'s flag parsing so everything after it is the actual command. |
-| `python .\package\src\clients\cli\main.py` | The eval CLI entry point (the unpacked tarball's Python source). |
-| `--prompts-file ".\evals\rag-01-mortgage-joint-check-threshold.json"` | Path to a v1.5.0 eval document containing one or more prompts plus their evaluator configurations. You can use any file from `evals\`. |
-| `--output ".\.evals\rag-01-report.html"` | Where to write the result. **File extension drives the format**: `.html` → styled HTML report (summary banner + aggregates + per-prompt cards), `.json` → raw JSON, `.csv` → flat CSV. If `--output` is omitted, results print to console. |
+| `runevals` | The CLI entry point installed by `npm install -g @microsoft/m365-copilot-eval`. |
+| `--env local` | The ATK environment name. The CLI loads env vars from `env\.env.local` in the current folder (same convention as ATK `provision --env local`). |
+| `--prompts-file ".\evals\rag-07-failure-no-matching-query.json"` | Path to a v1.5.0 eval document containing one or more prompts plus their evaluator configurations. Swap the filename to run a different test. |
+| `--log-level debug` | Verbose CLI logging — shows the prompt, agent response, retrieval artifact, and the per-evaluator pass/fail reasoning. Useful for bug-bashing. Drop to `info` once stable. |
+| `--output ".\.evals\2026-05-27_19-25-21-560.html"` | Where to write the result. **File extension drives the format**: `.html` → styled HTML report (summary banner + aggregates + per-prompt cards), `.json` → raw JSON, `.csv` → flat CSV. Convention is to timestamp the file (`YYYY-MM-DD_HH-mm-ss-fff.html`) so multiple runs don't overwrite. If `--output` is omitted, results print to console only. |
 
-Open the generated `.evals\rag-01-report.html` in your browser to see results.
+Open the generated `.evals\<timestamp>.html` in your browser to see results.
 
 ### Run a different test
 
-Swap the `--prompts-file` and `--output` filenames:
+Swap the `--prompts-file` and pick a new `--output` filename:
 
 ```powershell
-python -m dotenv -f .\env\.env.local run -- python .\package\src\clients\cli\main.py --prompts-file ".\evals\rag-07-failure-no-matching-query.json" --output ".\.evals\rag-07-report.html"
+$ts = Get-Date -Format 'yyyy-MM-dd_HH-mm-ss-fff'
+runevals --env local --prompts-file ".\evals\rag-01-mortgage-joint-check-threshold.json" --log-level debug --output ".\.evals\$ts.html"
 ```
 
 ### Run all 10 datasets in one batch (each produces its own HTML report)
 
 ```powershell
-$timestamp = Get-Date -Format 'yyyyMMdd-HHmmss'
 Get-ChildItem .\evals\rag-*.json, .\evals\mcp-*.json | ForEach-Object {
-    $out = ".\.evals\$timestamp-$([IO.Path]::GetFileNameWithoutExtension($_.Name)).html"
+    $ts  = Get-Date -Format 'yyyy-MM-dd_HH-mm-ss-fff'
+    $out = ".\.evals\$ts-$([IO.Path]::GetFileNameWithoutExtension($_.Name)).html"
     Write-Host "`n=== Running $($_.Name) -> $out ===" -ForegroundColor Cyan
-    python -m dotenv -f .\env\.env.local run -- python .\package\src\clients\cli\main.py --prompts-file $_.FullName --output $out
+    runevals --env local --prompts-file $_.FullName --log-level debug --output $out
 }
 ```
 
 ---
 
-## 7. The 10 prioritized datasets
+## 8. The prioritized datasets
 
-PR #360 is about retrieval evaluators, so 8 of 10 slots target RAG. The 2 MCP slots cover tool-call smoke + scope guardrail.
+PR #360 is about retrieval evaluators, so all datasets are RAG focused
 
 ### RAG (`evals/rag-*.json`) — 8 tests
 
@@ -195,40 +163,50 @@ PR #360 is about retrieval evaluators, so 8 of 10 slots target RAG. The 2 MCP sl
 | **P2** | `rag-11-max-rank-boundary-strict.json` | `max_rank: 1` boundary — Claims Timeline (§8.3) | **Fail** (likely) |
 | **P2** | `rag-12-max-rank-boundary-relaxed.json` | Same prompt as rag-11, `max_rank: 20` — proves `max_rank` is honored | **Pass** |
 
-### MCP (`evals/mcp-*.json`) — 2 tests
-
-| Priority | File | What it covers |
-|---|---|---|
-| **P3** | `mcp-04-show-claim-detail-by-number.json` | `show-claim-detail` smoke test — verifies MCP tool invocation + groundedness on claim `CN202504990` |
-| **P3** | `mcp-13-scope-decline-hr.json` | Negative — agent must **decline** an out-of-scope HR question and NOT invoke any tool |
-
-> Extract phrases in `retrievalExtract_contains` are pre-filled with verbatim text from the actual SharePoint doc `2026-03-25-zava-claims-insurance-policy-guidebook.docx`. If you swap to your own SharePoint site, copy equivalent verbatim phrases from your version of the doc and update the JSON.
 
 ---
 
-## 8. What to report when filing bugs
+## 9. Filing bugs
 
-For each finding include:
-- The dataset file (e.g. `rag-08-failure-required-terms-missing.json`)
-- The full evaluator output JSON (`matched_items`, `missing_items`, `extract_failures`, `matched_queries`, `includes_missing`, `excludes_found`)
-- The CLI tarball version (e.g. `microsoft-m365-copilot-eval-1.8.0-preview.1`)
-- A screenshot of the HTML report card (`.evals\*.html`) for the failing prompt
+File every finding as a **new issue** in the private repo:
+
+🐞 **<https://github.com/microsoft/M365-Copilot-Agent-Evals/issues/new>**
+
+### Required steps
+1. Open the link above (you must have read access to the private `microsoft/M365-Copilot-Agent-Evals` repo).
+2. Give the issue a **clear, specific title** — e.g. `runevals resolves --prompts-file relative to npm install dir, not cwd`.
+3. **Add the `bugbash` label** (Labels gear on the right side of the issue form → search for `bugbash` → select it). This is how the team triages bug-bash findings.
+4. (Recommended) Run the commands with `--log-level debug` for rich logs. Please add screenshots and the logs/ error messages in the issue. 
+
+### Include in the issue body
+- The **dataset file** used (e.g. `rag-08-failure-required-terms-missing.json`) — attach or paste the JSON.
+- The **full evaluator output JSON** from the report (`matched_items`, `missing_items`, `extract_failures`, `matched_queries`, `includes_missing`, `excludes_found`).
+- The **CLI version**: output of `npm ls -g @microsoft/m365-copilot-eval`.
+- The **exact command** you ran.
+- A **screenshot of the HTML report card** (`.evals\<timestamp>.html`) for the failing prompt.
+- The **relevant chunk of the `--log-level debug` console output** (redact tokens).
+- **Expected vs. actual** behavior in 1–2 sentences.
+
+> ⚠️ Do NOT paste secrets — scrub `AZURE_AI_API_KEY`, bearer tokens, and tenant-specific URLs from logs before posting.
 
 ---
 
-## 9. Troubleshooting
+## 10. Troubleshooting
 
 | Symptom | Cause / Fix |
 |---|---|
-| `ERROR Missing required environment variables: …` | `.env.local` not loaded. Make sure you used `python -m dotenv -f .\env\.env.local run --` and the file exists at that exact path. |
+| `runevals : The term 'runevals' is not recognized` | npm global bin folder isn't on PATH. Run `npm config get prefix` and add that folder (Windows) or `<that>/bin` (Mac/Linux) to PATH; reopen the terminal. |
+| `ERROR Missing required environment variables: …` | `env\.env.local` not found or missing keys. Confirm you ran the command from the `zava-insurance-claims` folder, `env\.env.local` exists there, and all 8 variables from §4 are populated. |
 | `Schema validation error: Document validation failed` | The dataset has a field the schema rejects (e.g. `id` at item root, or an unknown evaluator like `ToolCallAccuracy`). Move custom keys under `extensions`; only use evaluators in `EvaluatorMap` (Relevance, Coherence, Groundedness, Similarity, Citations, ExactMatch, PartialMatch, RetrievalQuery, RetrievalResult). |
-| `The term 'dotenv' is not recognized` | The `dotenv` script isn't on PATH. Use the module form: `python -m dotenv …` (or `pip install "python-dotenv[cli]"`). |
-| HTML report is empty / no aggregates | Agent didn't respond. Check the WorkIQ A2A endpoint reachability, token acquisition, and that the agent is provisioned in the same tenant as `TENANT_ID`. |
+| HTML report is empty / no aggregates | Agent didn't respond. Re-test the agent in <https://copilot.microsoft.com>; check WorkIQ A2A endpoint reachability and token acquisition; confirm the agent is provisioned in the same tenant as `TENANT_ID`. |
+| Agent provision fails in VS Code | Check the *Output* panel → *Microsoft 365 Agents Toolkit* channel. Common causes: not signed into M365, custom-app-upload disabled in tenant (admin must enable it), or SharePoint site is inaccessible. |
 
 ---
 
-## 10. Cleanup
+## 11. Cleanup
 
 ```powershell
 Remove-Item -Recurse -Force .\.evals
+# Optional: uninstall the CLI
+npm uninstall -g @microsoft/m365-copilot-eval
 ```

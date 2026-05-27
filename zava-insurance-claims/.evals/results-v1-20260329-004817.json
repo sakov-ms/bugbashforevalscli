@@ -1,0 +1,126 @@
+{
+  "individual_results": [
+    {
+      "prompt": "What does our claims documentation say about the approval process for insurance claims?",
+      "response": "I looked through our available **claims documentation in SharePoint** for anything that explicitly describes the **approval process for insurance claims**, including searches for “claims approval process” and related terms. Based on what I can access right now:\n\n### What I found\n- I **did not find any documents** that explicitly spell out a formal, end‑to‑end claim approval process (for example, defined approval stages, required approvers, decision thresholds, or SLAs).\n- The sources available to me **do not clearly document** who approves claims, what criteria must be met for approval, or how approval decisions are recorded.\n\n### What this means\n- I can’t reliably summarize or quote an official approval workflow from our claims documentation without risking guesswork.\n- If such a process exists, it may be:\n  - Documented under a **different name** (e.g., “claim determination,” “settlement authorization,” or “adjudication guidelines”)\n  - Stored in a **restricted SharePoint site** or another system I don’t currently surface\n  - Embedded within a broader document (e.g., adjuster guidelines or SOPs) without “approval process” being a searchable heading\n\n### Next practical steps (to get you unstuck quickly)\nIf you want, I can:\n- Search again using **specific document names** or internal terms you expect (for example, an SOP title or policy number)\n- Look for **adjuster guidelines** or **claims handling SOPs**, which often implicitly describe approval authority\n- Summarize the **de facto approval flow** based on claim artifacts (inspections → estimates → purchase orders → status changes), clearly marked as an inferred workflow, not formal policy\n\nJust tell me where you expect this to live (e.g., “Claims SOP,” “Adjuster Handbook,” or a SharePoint site name), and I’ll dig straight into that.",
+      "expected_response": "The agent should retrieve information about the claims approval process from the ZavaClaims SharePoint Shared Documents library, accurately describe the approval steps and criteria, and cite the source document.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response directly addresses the query by explaining that no explicit approval process is documented in the claims documentation, offers possible reasons, and suggests practical next steps to find the information, providing a thorough and insightful answer.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 4.0,\n    \"gpt_coherence\": 4.0,\n    \"coherence_reason\": \"The response is coherent because it logically and clearly presents the findings and implications related to the query. It is well structured with clear connections between ideas and offers actionable next steps, making it easy to understand and follow.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 3.0,\n    \"gpt_groundedness\": 3.0,\n    \"groundedness_reason\": \"The RESPONSE carefully states what was found and not found in the claims documentation and does not contradict or introduce unrelated information. It also offers next steps without asserting unsupported facts. Without the actual CONTEXT, the RESPONSE appears to be accurate and cautious, likely reflecting the source faithfully, but it includes inferred suggestions that are not explicitly documented, which aligns with the definition of an accurate response with unsupported additions.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 4,\n    \"result\": \"fail\"\n}",
+        "citations_score": "{\n    \"citation_format\": \"oai_unicode\",\n    \"score\": 0,\n    \"result\": \"fail\",\n    \"threshold\": 1,\n    \"reason\": \"Found 0 unique citation(s): None\"\n}"
+      }
+    },
+    {
+      "prompt": "What is Zava Insurance's policy on cryptocurrency reimbursement for contractors?",
+      "response": "I searched Zava Insurance’s internal SharePoint and claims documentation for any policy or guidance on **cryptocurrency reimbursement for contractors**, including terms like *cryptocurrency*, *crypto*, *digital currency*, *contractor payment*, and *reimbursement*.  \n\n### ✅ What I found\n- **There is no documented policy** in Zava Insurance internal files that allows, describes, or governs **cryptocurrency-based reimbursement or payment to contractors**.\n- I did not find any exceptions, pilot programs, or conditional rules mentioning crypto (e.g., Bitcoin, Ethereum, stablecoins) as an approved reimbursement or settlement method.\n\n### ✅ What this means in practice\nBased on the absence of any supporting documentation:\n- Contractor reimbursements are **implicitly limited to standard, approved payment methods** (e.g., invoicing with fiat currency via existing AP / purchase order workflows).\n- **Cryptocurrency reimbursement is not supported or approved** under current Zava Insurance policies.\n- Claims teams and contractors should **not submit or approve** crypto-based reimbursement requests, as there is no policy backing them.\n\n### ⚠️ Important note\nBecause this conclusion is based on **lack of documented policy**, not an explicit prohibition clause, the correct internal stance is:\n> *“Cryptocurrency reimbursement is not currently supported, as it is not covered by any approved Zava Insurance policy or procedure.”*\n\n### Suggested next steps (if this is coming up in a real claim or contractor discussion)\n- Route the question to **Finance / Legal / Compliance** for an official position if contractors are requesting crypto payments.\n- If you want, I can help you:\n  - Draft a **clear internal response** explaining why crypto reimbursement isn’t supported\n  - Check whether **Finance or Procurement policies** mention non-traditional payment methods\n  - Look up the **standard contractor reimbursement/payment policy** to reference instead\n\nJust tell me how you want to proceed.",
+      "expected_response": "The agent should acknowledge that it does not have information on cryptocurrency reimbursement in its claims knowledge base and should not fabricate a policy. It may suggest the user consult other resources or contacts for this topic.",
+      "results": {
+        "partial_match_score": "{\n    \"partial_match\": 0.0,\n    \"partial_match_result\": \"fail\",\n    \"partial_match_threshold\": 0.5,\n    \"partial_match_reason\": \"Match score: 0.000 (below threshold 0.5)\"\n}"
+      }
+    },
+    {
+      "prompt": "What can you help me with as the Zava Insurance Claims agent?",
+      "response": "I’m your **Zava Insurance Claims agent**, so I help you handle insurance claims **end‑to‑end**—quickly and accurately—using Zava’s claims system. Here’s what I can take care of for you, all in one place:\n\n---\n\n## 🗂️ Claims Management\n- **View the claims dashboard** to see all claims at a glance, with filters by status or policyholder.\n- **Look up any claim** by claim number or ID and see full details (status, inspections, contractors, purchase orders).\n- **Get a concise claim summary** for fast reviews.\n- **Update claim statuses** (Open, Pending, Approved, Denied, Closed, Under Investigation) with notes for audit trails.\n\n---\n\n## 🏠 Inspections\n- **Create new inspection tasks** (initial, re‑inspection, or final).\n- **Schedule inspections**, set priority, assign inspectors, and add instructions.\n- **Update inspection results**: status, findings, recommended actions, or reassignment.\n- **List available inspectors** and see their specializations to pick the right fit.\n\n---\n\n## 🧾 Purchase Orders\n- **Review and update purchase orders** linked to claims.\n- Move POs through statuses like **approved, rejected, in‑progress, or completed**, with optional notes.\n\n---\n\n## 🛠️ Contractors\n- **Browse available repair contractors**.\n- Filter by **specialty** (Roofing, Water Damage, Fire, etc.).\n- See **preferred contractors** to ensure faster approvals and trusted service.\n\n---\n\n## 📑 Policies & Process Guidance\n- Answer questions about **Zava’s claims policies, procedures, and approval workflows** using internal documentation.\n- Help clarify **what comes next** in a claim or why something is pending.\n\n---\n\n## ✅ How I’m easiest to use\nYou can talk to me naturally, for example:\n- *“Show me open claims.”*  \n- *“Give me a summary of claim CN202504990.”*  \n- *“Schedule an initial inspection for this claim.”*  \n- *“Approve the purchase order and add a note.”*  \n- *“Find a preferred roofing contractor.”*\n\n---\n\nIf you’d like, we can start right away.  \n👉 **What do you want to do first—check a claim, schedule an inspection, or review contractors?**",
+      "expected_response": "The agent should provide a coherent, organized overview of its capabilities: viewing claims dashboards, looking up claim details, managing inspections (create, update, list inspectors), updating claim statuses, managing purchase orders, browsing contractors, and referencing claims documentation from SharePoint. The response should be structured and consistent with the agent's declared instructions.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response thoroughly details the various ways the Zava Insurance Claims agent can assist, covering claims management, inspections, purchase orders, contractors, and policy guidance. It also provides examples of natural language commands, making it a comprehensive and clear answer to the query.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is highly coherent because it thoroughly and clearly explains the agent's capabilities in a well-organized, logical, and easy-to-follow manner, directly addressing the query with excellent flow and transitions.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The response fully and accurately reflects all the essential capabilities described in the context, presenting them in a clear, organized way without adding unsupported details or omitting critical points.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}"
+      }
+    },
+    {
+      "prompt": "Can you help me write a marketing email for Zava Insurance's new product launch?",
+      "response": "Absolutely—happy to help. Since I didn’t find any existing Zava Insurance marketing email templates in our internal files, the draft below is **my suggested copy** (not sourced from internal documents). It’s written to be clear, benefit‑driven, and easy to customize.\n\n---\n\n## Suggested Marketing Email: Zava Insurance New Product Launch\n\n**Subject line options (choose one):**  \n- Introducing Zava Protect™: Smarter Coverage, Less Stress  \n- A New Way to Protect What Matters Most  \n- Meet Zava Protect™ — Insurance That Works for You  \n\n---\n\n**Email body:**\n\nHi {{FirstName}},\n\nWe’re excited to introduce **Zava Protect™**, our newest insurance solution designed to make protecting your home and valuables simpler, faster, and more transparent than ever.\n\nWith Zava Protect™, you get:\n- **Faster claims, fewer headaches** – streamlined digital claims from start to finish  \n- **Clear, flexible coverage** – protection that adapts to your needs, not the other way around  \n- **Expert support when it matters most** – backed by Zava’s trusted inspection and repair network  \n\nWhether you’re preparing for the unexpected or looking for better peace of mind, Zava Protect™ puts you in control—with no unnecessary complexity.\n\n✅ Quick digital setup  \n✅ Transparent coverage details  \n✅ Support you can count on  \n\nNow is the perfect time to experience insurance designed around you.\n\n👉 **[Explore Zava Protect™]**  \n👉 **[Get a personalized quote]**\n\nIf you have questions, our team is ready to help every step of the way.\n\nWarm regards,  \n**The Zava Insurance Team**\n\n---\n\n## Optional Footer / Trust Signals\n- Rated ★★★★☆ by thousands of policyholders  \n- Backed by Zava’s nationwide repair and inspection partners  \n- Learn more at **[www.zavainsurance.com]**\n\n---\n\nIf you’d like, I can:\n- Tailor this for **existing customers vs. new leads**  \n- Adjust the tone (more bold, more friendly, or more premium)  \n- Create **A/B subject lines** or a **short mobile version**\n\nJust tell me who the audience is and how this will be sent (campaign email, announcement, or follow‑up).",
+      "expected_response": "The agent should decline the request, explaining that it is scoped to insurance claims management tasks such as viewing claims, managing inspections, updating statuses, and referencing claims documentation. It should not assist with marketing content.",
+      "results": {
+        "partial_match_score": "{\n    \"partial_match\": 0.0,\n    \"partial_match_result\": \"fail\",\n    \"partial_match_threshold\": 0.5,\n    \"partial_match_reason\": \"Match score: 0.000 (below threshold 0.5)\"\n}"
+      }
+    },
+    {
+      "prompt": "Show me all open insurance claims",
+      "response": "Here’s the list of **all currently open insurance claims** in the system. I’ve filtered the dashboard to show only claims with an **Open** status (including “Under Investigation”). citeturn1search2\n\n### ✅ Open Claims Overview\n- **CN202504999** — *Amanda Rodriguez*  \n  Structural & foundation damage • Tacoma, WA • Est. Loss: $31,486  \n  Status: Open – Under Investigation\n\n- **CN202505003** — *Jessica Walker*  \n  Roof & storm damage • Eugene, OR • Est. Loss: $33,627  \n  Status: Open – Under Investigation\n\n- **CN202504991** — *Christopher Thompson*  \n  Vandalism • Vancouver, WA • Est. Loss: $29,794  \n  Status: Open – Under Investigation\n\n- **CN202505010** — *Rebecca Jackson*  \n  Severe roof & storm damage • Spokane, WA • Est. Loss: $41,048  \n  Status: Open – Under Investigation\n\n- **CN202504993** — *Christopher Anderson*  \n  Mold & water damage • Salem, OR • Est. Loss: $3,195  \n  Status: Open – Under Investigation\n\n- **CN202504996** — *Amanda Lee*  \n  Severe hail & storm damage • Vancouver, WA • Est. Loss: $29,840  \n  Status: Open – Under Investigation\n\nIf you’d like, I can:\n- Open **full details** for any specific claim\n- Show **open claims by policyholder or location**\n- Help **update a claim’s status**\n- Review **inspections or pending purchase orders** tied to these claims\n\nJust tell me what you’d like to do next.",
+      "expected_response": "The agent should invoke the show-claims-dashboard tool with the status parameter set to 'Open' to display the claims dashboard filtered to show only open claims, including status overview and summary metrics.",
+      "results": {
+        "relevance_score": "{\n    \"relevance\": 5.0,\n    \"gpt_relevance\": 5.0,\n    \"relevance_reason\": \"The response directly lists all currently open insurance claims with detailed information, fully addressing the query. It also offers additional options for further actions, enhancing user understanding and interaction.\",\n    \"relevance_result\": \"pass\",\n    \"relevance_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "coherence_score": "{\n    \"coherence\": 5.0,\n    \"gpt_coherence\": 5.0,\n    \"coherence_reason\": \"The response is well-structured, directly answers the query, and presents information in a clear, logical, and easy-to-follow manner with appropriate transitions and organization.\",\n    \"coherence_result\": \"pass\",\n    \"coherence_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "groundedness_score": "{\n    \"groundedness\": 5.0,\n    \"gpt_groundedness\": 5.0,\n    \"groundedness_reason\": \"The RESPONSE is fully grounded and complete as it accurately reflects the CONTEXT's instruction to show only open claims with status overview and summary metrics, without adding unsupported information or omitting critical details.\",\n    \"groundedness_result\": \"pass\",\n    \"groundedness_threshold\": 3,\n    \"threshold\": 3,\n    \"result\": \"pass\"\n}",
+        "tool_call_accuracy_score": "{\n    \"tool_call_accuracy\": \"not applicable\",\n    \"tool_call_accuracy_result\": \"pass\",\n    \"tool_call_accuracy_threshold\": 3,\n    \"tool_call_accuracy_reason\": \"No tool calls found in response or provided tool_calls.\",\n    \"details\": {}\n}"
+      }
+    }
+  ],
+  "aggregate_statistics": {
+    "Citations": {
+      "total_prompts": 5,
+      "prompts_evaluated": 1,
+      "total_evaluated": 1,
+      "pass_count": 0,
+      "fail_count": 1,
+      "pass_rate": 0.0,
+      "avg_score": 0.0,
+      "threshold": 1,
+      "scores": [
+        0.0
+      ]
+    },
+    "Coherence": {
+      "total_prompts": 5,
+      "prompts_evaluated": 3,
+      "total_evaluated": 3,
+      "pass_count": 3,
+      "fail_count": 0,
+      "pass_rate": 100.0,
+      "avg_score": 4.666666666666667,
+      "threshold": 3,
+      "scores": [
+        4.0,
+        5.0,
+        5.0
+      ]
+    },
+    "Groundedness": {
+      "total_prompts": 5,
+      "prompts_evaluated": 3,
+      "total_evaluated": 3,
+      "pass_count": 2,
+      "fail_count": 1,
+      "pass_rate": 66.66666666666666,
+      "avg_score": 4.333333333333333,
+      "threshold": 4,
+      "scores": [
+        3.0,
+        5.0,
+        5.0
+      ]
+    },
+    "Partial Match": {
+      "total_prompts": 5,
+      "prompts_evaluated": 2,
+      "total_evaluated": 2,
+      "pass_count": 0,
+      "fail_count": 2,
+      "pass_rate": 0.0,
+      "avg_score": 0.0,
+      "threshold": 0.5,
+      "scores": [
+        0.0,
+        0.0
+      ]
+    },
+    "Relevance": {
+      "total_prompts": 5,
+      "prompts_evaluated": 3,
+      "total_evaluated": 3,
+      "pass_count": 3,
+      "fail_count": 0,
+      "pass_rate": 100.0,
+      "avg_score": 5.0,
+      "threshold": 3,
+      "scores": [
+        5.0,
+        5.0,
+        5.0
+      ]
+    }
+  }
+}
