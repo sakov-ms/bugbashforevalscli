@@ -64,7 +64,8 @@ If your account does not have access, edit the `OneDriveAndSharePoint` capabilit
 1. Open **<https://copilot.microsoft.com>** in your browser, signed in with the same M365 account you used in ATK.
 2. Click the **agent picker** (top of the chat / right side panel) and choose **Zava Insurance Claims (local)**.
 3. Try one of the built-in conversation starters:
-   - *"Show me the claims dashboard"*
+   - *"For a dwelling claim on a property with a mortgage, when is a joint check with the mortgage company required?"*
+   - *What is a deductible and what standard deductible options are available for Zava HomeShield homeowners policies?*
    - *"What does our claims documentation say about the approval process?"*
    - *"Show me the details for claim CN202504990"*
 
