@@ -39,6 +39,8 @@ You should end up with a folder containing `appPackage\`, `env\`, `teamsapp.yml`
 File → Open Folder → zava-insurance-claims
 ```
 
+![Open the zava-insurance-claims folder in VS Code](docs/images/open-folder-zava.png)
+
 ### 2.4  Sign in and provision
 
 1. Click the **Microsoft 365 Agents Toolkit** icon in the side bar.
