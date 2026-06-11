@@ -50,7 +50,7 @@ https://microsoft.sharepoint-df.com/sites/CXDev/Shared Documents/Zava Insurance 
 ```
 If your account does not have access, edit the `OneDriveAndSharePoint` capability's `items_by_url[0].url` to point at a SharePoint site **you own** that contains the Zava claims policy guidebook, then re-run **Provision**.
 
-### 2.6  Try the agent in Microsoft 365 Copilot
+### 2.5  Try the agent in Microsoft 365 Copilot
 
 1. Open **<https://copilot.microsoft.com>** in your browser, signed in with the same M365 account you used in ATK.
 2. Click the **agent picker** (top of the chat / right side panel) and choose **Zava Insurance Claims (local)**.
