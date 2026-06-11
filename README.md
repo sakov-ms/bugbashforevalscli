@@ -91,6 +91,8 @@ From inside the **`zava-insurance-claims`** folder run `runevals`:
 ```powershell
 Go to folder zava-insurance-claims
 
+# REACH OUT TO THE BUG BASH ORGANISER FOR A SECRET STEP BEFORE TRYING TO RUN A JOB
+
 runevals --env local --prompts-file "<path to Zava agent>\zava-insurance-claims\evals\rag-07-failure-no-matching-query.json" --log-level debug --output "<path to Zava agent>\zava-insurance-claims\.evals\2026-05-27_19-25-21-560.html"
 ```
 
