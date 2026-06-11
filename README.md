@@ -10,7 +10,7 @@
 | **Microsoft 365 Agents Toolkit** (VS Code extension) | Signs you into M365, builds the agent app package, and uploads it to your tenant. |
 | **Node.js 18+** and **npm** | Required to install the `@microsoft/m365-copilot-eval` CLI. |
 | **Python 3.10+** | Required by the eval CLI runtime. |
-| **Access to the Zava Claims SharePoint site** | The agent's knowledge source - 'https://microsoft.sharepoint-df.com/teams/ZavaClaims/Shared Documents' |
+| **Access to the Zava Claims SharePoint site** | The agent's knowledge source - 'https://microsoft.sharepoint-df.com/sites/CXDev/Shared Documents/Zava Insurance Documents' |
 
 ---
 
