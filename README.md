@@ -34,10 +34,8 @@ You should end up with a folder containing `appPackage\`, `env\`, `teamsapp.yml`
 4. After install, the ATK side bar icon appears on the left rail.
 
 ### 2.3  Open the agent folder in VS Code
-
-```
-File → Open Folder → zava-insurance-claims
-```
+1. Open VS code. Click on File → Open Folder
+2. Select zava-insurance-claims folder that was downloaded in #1
 
 ![Open the zava-insurance-claims folder in VS Code](docs/images/open-folder-zava.png)
 
