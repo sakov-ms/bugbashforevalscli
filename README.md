@@ -42,7 +42,7 @@ You should end up with a folder containing `appPackage\`, `env\`, `teamsapp.yml`
 4. In the prompt, choose the environment **`local`**.
 5. ATK builds the app package (`appPackage\build\appPackage.local.zip`) and uploads it to your tenant. Watch the *Output* panel for progress; provisioning completes in 1–2 minutes.
 
-### 2.5  (Optional) Point the knowledge source at your own SharePoint
+### 2.4  (Optional) Point the knowledge source at your own SharePoint
 
 The agent's `appPackage\declarativeAgent.json` references:
 ```
