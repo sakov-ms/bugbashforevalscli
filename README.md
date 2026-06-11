@@ -7,7 +7,7 @@
 | Tool | Why |
 |---|---|
 | **VS Code** | Host for the M365 Agents Toolkit extension that provisions the agent. |
-| **Microsoft 365 Agents Toolkit** (VS Code extension) | Signs you into M365, builds the agent app package, and uploads it to your tenant. |
+| **Microsoft 365 Agents Toolkit** (VS Code extension) | Signs you into M365, builds the agent app package, and uploads it to your tenant. Make sure the ATK side bar icon appears on the left rail.|
 | **Node.js 18+** and **npm** | Required to install the `@microsoft/m365-copilot-eval` CLI. |
 | **Python 3.10+** | Required by the eval CLI runtime. |
 | **Access to the Zava Claims SharePoint site** | The agent's knowledge source - 'https://microsoft.sharepoint-df.com/sites/CXDev/Shared Documents/Zava Insurance Documents' |
@@ -26,25 +26,18 @@ cd zava-insurance-claims
 
 You should end up with a folder containing `appPackage\`, `env\`, `teamsapp.yml`, etc.
 
-### 2.2  Install the Microsoft 365 Agents Toolkit extension in VS Code
-
-1. Open **VS Code**.
-2. Go to the **Extensions** view (Ctrl+Shift+X).
-3. Search for **"Microsoft 365 Agents Toolkit"** (publisher: *Microsoft*) and click **Install**.
-4. After install, the ATK side bar icon appears on the left rail.
-
-### 2.3  Open the agent folder in VS Code
+### 2.2  Open the agent folder in VS Code
 1. Open VS code. Click on File → Open Folder
 2. Select zava-insurance-claims folder that was downloaded in #1
 
 ![Open the zava-insurance-claims folder in VS Code](docs/images/open-folder-zava.png)
 
-### 2.4  Sign in and provision
+### 2.3  Sign in and provision
 
 1. Click the **Microsoft 365 Agents Toolkit** icon in the side bar.
 2. Under **ACCOUNTS**, sign in to:
    - **Microsoft 365** — the account/tenant that will host the agent.
-   - **Azure** — if you plan to deploy any backend resources (not strictly required for this bug bash).
+   - **Azure** — not required for this bug bash.
 3. Under **LIFECYCLE**, click **Provision**.
 4. In the prompt, choose the environment **`local`**.
 5. ATK builds the app package (`appPackage\build\appPackage.local.zip`) and uploads it to your tenant. Watch the *Output* panel for progress; provisioning completes in 1–2 minutes.
@@ -53,7 +46,7 @@ You should end up with a folder containing `appPackage\`, `env\`, `teamsapp.yml`
 
 The agent's `appPackage\declarativeAgent.json` references:
 ```
-https://microsoft.sharepoint-df.com/teams/ZavaClaims/Shared Documents
+https://microsoft.sharepoint-df.com/sites/CXDev/Shared Documents/Zava Insurance Documents
 ```
 If your account does not have access, edit the `OneDriveAndSharePoint` capability's `items_by_url[0].url` to point at a SharePoint site **you own** that contains the Zava claims policy guidebook, then re-run **Provision**.
 
