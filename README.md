@@ -78,21 +78,9 @@ runevals --version
 runevals --help
 ```
 
-> You should see 1.9.* in the version
+> You should see 2.* in the version
 > If `runevals` is not recognized, ensure your npm global bin folder is on PATH:
 > `npm config get prefix` → add `<that path>` (Windows) or `<that path>/bin` (Mac/Linux) to PATH.
-
----
-
-## 4. A little bit about the new `RetrievalQuery` and `RetrievalResult` evaluators 
-
-PR #360 introduces two **deterministic, non-LLM** evaluators that grade the retrieval artifact your agent emits (the JSON describing the queries it ran and the items it got back). Both produce a binary `pass`/`fail` (score `1.0`/`0.0`) plus a `diagnostic_code`, so failures are precisely classifiable without an LLM judge.
-
-### `RetrievalQuery` — *did the agent search the right thing?*
-Inspects every `queryString` issued under a given `capability` (e.g. `OneDriveAndSharePoint`) and grades whether the **queries themselves** look right. You configure a `selector` (case-insensitive substring that picks which queries to judge), plus optional `includes` (terms that must all appear) and `excludes` (terms that must not appear). Failures surface as one of `no_matching_query`, `required_terms_missing`, `excluded_terms_found`, `mixed_term_failure`, or `retrieval_failure`.
-
-### `RetrievalResult` — *did the agent retrieve the right items?*
-Grades the **items returned** by a capability against your expectations. You set `capability` plus either `expected_items` (specific docs/URLs, each with optional verbatim extract phrases that must appear in the snippet) and/or `min_expected_count` (minimum number of hits required). `max_rank` (default `10`) bounds how deep into the ranked results the evaluator looks, so it doubles as an ordering/relevance assertion.
 
 ---
 
