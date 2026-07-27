@@ -1,0 +1,256 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/m365-copilot-eval/refs/heads/main/schema/v1/eval-document.schema.json",
+  "schemaVersion": "1.7.0",
+  "metadata": {
+    "name": "Zava Insurance Claims Agent — CLI Evaluation Set",
+    "description": "Evals CLI dataset scaffolded from zava-InsuranceClaims_seval_QuerySet.tsv + zava-InsuranceClaims_seval_LmcheckList.yaml. AssertionJudge carries each query's SEVAL assertions; Similarity and Groundedness run as defaults and expected_response is synthesised for items that have assertions. Queries without assertions fall back to Relevance + Coherence.",
+    "createdBy": "sakov",
+    "agentName": "Zava Insurance Claims",
+    "tags": [
+      "zava",
+      "insurance",
+      "claims",
+      "cli"
+    ]
+  },
+  "default_evaluators": {
+    "Similarity": {},
+    "Groundedness": {}
+  },
+  "items": [
+    {
+      "prompt": "Look up the details for claim CN202504990",
+      "expected_response": "The agent looks up claim CN202504990 by invoking the show-claim-detail tool with claimId set to 'CN202504990'. It then presents the detailed information for that claim, including its related inspections, purchase orders, and contractor assignments. The response is focused on the requested claim and surfaces the connected records so the user has a complete picture of its status.",
+      "evaluators": {
+        "AssertionJudge": {
+          "options": {
+            "assertions": [
+              {
+                "text": "The agent should invoke the show-claim-detail tool with claimId set to 'CN202504990' and display detailed information about the claim, including related inspections, purchase orders, and contractor assignments.",
+                "level": "critical"
+              }
+            ]
+          }
+        }
+      },
+      "evaluators_mode": "extend"
+    },
+    {
+      "prompt": "Show me claims for Amanda Rodriguez",
+      "expected_response": "The agent invokes the show-claims-dashboard tool with policyHolderName set to 'Amanda Rodriguez' to filter the claims by that policy holder. It then displays the claims associated with Amanda Rodriguez so the user can review her claim activity. The response is scoped to that policy holder's claims rather than the full claims list.",
+      "evaluators": {
+        "AssertionJudge": {
+          "options": {
+            "assertions": [
+              {
+                "text": "The agent should invoke the show-claims-dashboard tool with policyHolderName set to 'Amanda Rodriguez' to filter and display claims associated with that policy holder.",
+                "level": "critical"
+              }
+            ]
+          }
+        }
+      },
+      "evaluators_mode": "extend"
+    },
+    {
+      "prompt": "List all roofing contractors",
+      "expected_response": "The agent invokes the show-contractors tool with specialty set to 'Roofing' to filter the contractor directory. It then displays the filtered list of roofing contractors that are available for repair work. The response focuses on roofing specialists so the user can choose an appropriate contractor.",
+      "evaluators": {
+        "AssertionJudge": {
+          "options": {
+            "assertions": [
+              {
+                "text": "The agent should invoke the show-contractors tool with specialty set to 'Roofing' and display the filtered list of roofing contractors available for repair work.",
+                "level": "critical"
+              }
+            ]
+          }
+        }
+      },
+      "evaluators_mode": "extend"
+    },
+    {
+      "prompt": "Who are the available inspectors?",
+      "expected_response": "The agent invokes the list-inspectors tool to retrieve the inspector directory. It then displays all available inspectors along with their specializations so the user can see who can be assigned. The response presents the inspectors clearly with the specialization details for each one.",
+      "evaluators": {
+        "AssertionJudge": {
+          "options": {
+            "assertions": [
+              {
+                "text": "The agent should invoke the list-inspectors tool and display all available inspectors with their specializations.",
+                "level": "critical"
+              }
+            ]
+          }
+        }
+      },
+      "evaluators_mode": "extend"
+    },
+    {
+      "prompt": "Give me a quick summary of claim CN202504991",
+      "expected_response": "The agent invokes the get-claim-summary tool with claimId set to 'CN202504991' to retrieve a summary of the claim. It then returns a concise text summary covering the claim's key details. The response stays brief and summary-shaped rather than dumping the full claim record.",
+      "evaluators": {
+        "AssertionJudge": {
+          "options": {
+            "assertions": [
+              {
+                "text": "The agent should invoke the get-claim-summary tool with claimId set to 'CN202504991' and return a concise text summary of the claim's key details.",
+                "level": "critical"
+              }
+            ]
+          }
+        }
+      },
+      "evaluators_mode": "extend"
+    },
+    {
+      "prompt": "Create a high-priority initial inspection for claim CN202504993 scheduled for next Monday",
+      "expected_response": "The agent invokes the create-inspection tool with claimNumber 'CN202504993', taskType 'initial', priority 'high', and a scheduledDate corresponding to next Monday. After creating the task it confirms to the user that the inspection was created with those details. The response reflects the high-priority initial inspection and the scheduled date back to the user.",
+      "evaluators": {
+        "AssertionJudge": {
+          "options": {
+            "assertions": [
+              {
+                "text": "The agent should invoke the create-inspection tool with claimNumber 'CN202504993', taskType 'initial', priority 'high', and a scheduledDate corresponding to next Monday. It should confirm the inspection was created.",
+                "level": "critical"
+              }
+            ]
+          }
+        }
+      },
+      "evaluators_mode": "extend"
+    },
+    {
+      "prompt": "Show me only our preferred contractors",
+      "expected_response": "The agent invokes the show-contractors tool with preferredOnly set to true to filter the directory. It then displays only the preferred contractors, excluding non-preferred ones. The response is limited to the preferred contractor list as requested.",
+      "evaluators": {
+        "AssertionJudge": {
+          "options": {
+            "assertions": [
+              {
+                "text": "The agent should invoke the show-contractors tool with preferredOnly set to true and display only the preferred contractors.",
+                "level": "critical"
+              }
+            ]
+          }
+        }
+      },
+      "evaluators_mode": "extend"
+    },
+    {
+      "prompt": "What is the company's vacation policy for employees?",
+      "expected_response": "The agent politely declines this request, explaining that it is a claims management assistant and cannot answer HR or general company policy questions such as vacation policy. It does not fabricate a policy answer. Instead, it redirects the user to appropriate resources, such as HR or the relevant internal channels, for that information.",
+      "evaluators": {
+        "AssertionJudge": {
+          "options": {
+            "assertions": [
+              {
+                "text": "The agent should decline this request, explaining that it is a claims management assistant and cannot answer HR or general company policy questions. It should redirect the user to appropriate resources.",
+                "level": "critical"
+              }
+            ]
+          }
+        }
+      },
+      "evaluators_mode": "extend"
+    },
+    {
+      "prompt": "Can you send an email to the adjuster assigned to claim CN202504999?",
+      "expected_response": "The agent explains that it cannot send emails, without claiming any email-sending capability it does not have. It may offer a helpful alternative, such as looking up the details for claim CN202504999 so the user can identify the assigned adjuster and contact them directly. The response is honest about its limitations while still trying to assist within its claims-management scope.",
+      "evaluators": {
+        "AssertionJudge": {
+          "options": {
+            "assertions": [
+              {
+                "text": "The agent should explain that it cannot send emails. It may offer to look up the claim details so the user can identify the assigned adjuster, but it should not claim to have email-sending capability.",
+                "level": "critical"
+              }
+            ]
+          }
+        }
+      },
+      "evaluators_mode": "extend"
+    },
+    {
+      "prompt": "Show me all denied claims and then give me the details on the first one",
+      "expected_response": "The agent first invokes show-claims-dashboard with status 'Denied' to display the denied claims. It then invokes show-claim-detail for the first denied claim to retrieve and present its full details. The response addresses both parts of the request, showing the denied claims list and then drilling into the details of the first one.",
+      "evaluators": {
+        "AssertionJudge": {
+          "options": {
+            "assertions": [
+              {
+                "text": "The agent should first invoke show-claims-dashboard with status 'Denied' to display denied claims, and then invoke show-claim-detail for the first denied claim to provide its full details. The response should address both parts of the request.",
+                "level": "critical"
+              }
+            ]
+          }
+        }
+      },
+      "evaluators_mode": "extend"
+    },
+    {
+      "prompt": "How long does the Zava claims investigation typically take after a claim is filed?",
+      "expected_response": "Drawing on the zava-claims-insurance-policy-guidebook.docx and citing it as the source, the agent states that the investigation stage typically takes 5-15 business days after a claim is filed. It explains that during this period Zava Claims gathers evidence, conducts inspections if needed, takes statements, and reviews documentation related to the loss. It may add supporting context from the guidebook: claims are acknowledged within 24 hours, an adjuster usually contacts the policyholder within 48 hours, a coverage determination is issued within 5 business days after the investigation, and the total standard claim cycle is generally 15-30 business days, with complex claims taking longer.",
+      "evaluators": {
+        "AssertionJudge": {
+          "options": {
+            "assertions": [
+              {
+                "text": "The agent should retrieve the answer from the zava-claims-insurance-policy-guidebook.docx and state that the investigation stage typically takes 5-15 business days after a claim is filed.",
+                "level": "critical"
+              },
+              {
+                "text": "The agent should cite the zava-claims-insurance-policy-guidebook.docx as the source for the timeline.",
+                "level": "critical"
+              },
+              {
+                "text": "The agent should explain that during the investigation period Zava Claims gathers evidence, conducts inspections if needed, takes statements, and reviews documentation related to the loss.",
+                "level": "critical"
+              },
+              {
+                "text": "The agent may include supporting context from the guidebook: claims are acknowledged within 24 hours, an adjuster usually contacts the policyholder within 48 hours, a coverage determination is issued within 5 business days after the investigation, and the total standard claim cycle is generally 15-30 business days (complex claims can take longer).",
+                "level": "critical"
+              }
+            ]
+          }
+        },
+        "Citations": {
+          "citation_format": "mixed"
+        }
+      },
+      "evaluators_mode": "extend"
+    },
+    {
+      "prompt": "What information is required when a policyholder files a new claim?",
+      "expected_response": "Citing the 'Required Information for Claim Submission' part of the Claims Process section of the zava-claims-insurance-policy-guidebook.docx, the agent lists the information required to file a new claim: the policy number; the date, time, and location of the loss; a description of what happened; the extent of damage or injury; a police or fire report number if applicable; the names and contact information of any witnesses; other insurance information if another policy may cover the loss; and receipts or proof of value for damaged or stolen items. It notes that photos or video of the damage are recommended but not mandatory. It may also mention that claims can be filed 24/7 via the online portal, mobile app, phone, email, fax, in person, or through an authorized agent, and that providing complete and accurate information up front helps avoid delays during investigation and coverage determination.",
+      "evaluators": {
+        "AssertionJudge": {
+          "options": {
+            "assertions": [
+              {
+                "text": "The agent should retrieve the answer from the Claims Process section ('Required Information for Claim Submission') of the zava-claims-insurance-policy-guidebook.docx and cite it as the source.",
+                "level": "critical"
+              },
+              {
+                "text": "The agent should list the required information for a new claim: policy number; date, time, and location of the loss; description of what happened; extent of damage or injury; police or fire report number (if applicable); names and contact information of any witnesses; other insurance information (if another policy may cover the loss); and receipts or proof of value for damaged or stolen items.",
+                "level": "critical"
+              },
+              {
+                "text": "The agent should indicate that photos or video of the damage are recommended but not mandatory.",
+                "level": "critical"
+              },
+              {
+                "text": "The agent may note that claims can be filed 24/7 via the online portal, mobile app, phone, email, fax, in person, or through an authorized agent, and that complete and accurate information up front helps avoid delays during investigation and coverage determination.",
+                "level": "critical"
+              }
+            ]
+          }
+        },
+        "Citations": {
+          "citation_format": "mixed"
+        }
+      },
+      "evaluators_mode": "extend"
+    }
+  ]
+}
